@@ -1,10 +1,6 @@
 zwrotka-1.txt
 
-Ref.:
-Ciągle tam, była tu i tam
-Zawsze miała fajny gest, a w duszy błogi stan
-Była jak nieokiełznany wiatr
-Lubiła kiedy jestem ja i muzyka gra
+refren-1.txt
 
 Porywista i piękna czuje się wiesz jak
 To nie Amsterdam ani amnezja

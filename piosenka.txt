@@ -6,14 +6,7 @@ zwrotka-2.txt
 
 refren-2.txt
 
-Nie lubi gdy cicho, a niech to licho, nie żadne ryzyko
-Nie błyszczy się sikor
-Mamy to na cito nie świeci się pitos
-Ajajaj nie ma nic za friko
-Ajajaj czujemy się syto
-Ajajaj bo ty to a my to
-Ajajaj latino bambino
-Ajajaj polskie dzikie kino
+zwrotka-3.txt
 
 Ref.:
 Ciągle tam, była tu i tam

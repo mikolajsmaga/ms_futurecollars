@@ -4,11 +4,7 @@ refren-1.txt
 
 zwrotka-2.txt
 
-Ref.:
-Ciągle tam, była tu i tam
-Zawsze miała fajny gest, a w duszy błogi stan
-Była jak nieokiełznany wiatr
-Lubiła kiedy jestem ja i muzyka gra
+refren-2.txt
 
 Nie lubi gdy cicho, a niech to licho, nie żadne ryzyko
 Nie błyszczy się sikor

@@ -1,0 +1,1034 @@
+Mikołaj i Aga@Aga_Miki MINGW64 /c/future_collars/projekty/zadanie-git (master)
+$ git log
+commit ba25db9203b83ba5816024a11837a67237f5dcb3 (HEAD -> master)
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:17:12 2025 +0200
+
+    usunięto nazwy plików refren-1.txt refren-2.txt i wstawiono refren kompletny
+
+commit 00ad69cc0fa6d224aa32964d3169a5e4852d3a06
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:10:17 2025 +0200
+
+    usunięto niepotrzebny.txt
+
+commit 0b238eb4f455ba315ece47071c52a6067c399bf8
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:09:38 2025 +0200
+
+    usunięto refren-2.txt
+
+commit 57f739912a851bcfa3348edbf7f4a63407e55767
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:08:08 2025 +0200
+
+    usunięte refren-1.txt
+
+commit 4fd98f3964339d92ef428d34ee239a0a347708ff
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:01:59 2025 +0200
+
+    Revert "usunięto ostatni rewers w refren-1.txt"
+
+    This reverts commit c31a2b3bcdc20c894937263380e40b978d450d76.
+
+commit c31a2b3bcdc20c894937263380e40b978d450d76
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:00:39 2025 +0200
+
+    usunięto ostatni rewers w refren-1.txt
+
+commit fec97e81052875bd8cc0dd98e82dd9666f5f3292
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:59:50 2025 +0200
+
+    cały refren-1.txt
+
+commit d85a7665d7823f02a02baa789308dfa446547e15
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:55:51 2025 +0200
+
+    dodano refren 1
+
+commit 8ca4b7da255f7d90bf44571a58039f7ce562b9be
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:52:44 2025 +0200
+
+    nowy pusty plik refren-1.txt
+
+commit 26e7040c23c4ce80bbdadafe14ae7d6c9e448dfd
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:44:28 2025 +0200
+
+    Revert "usunięto ostatni wers ref-1.txt"
+
+    This reverts commit 891374a3a02866c0d6c2cdc21d35b5885e6d70e0.
+    Przywrócono cały refren-1.txt
+
+commit 422d53d0437a2888f9ffbef5cf37fb3795767b79
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:44:01 2025 +0200
+
+    błędy
+
+commit 891374a3a02866c0d6c2cdc21d35b5885e6d70e0
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:41:41 2025 +0200
+
+    usunięto ostatni wers ref-1.txt
+
+commit 3f05490170c52bc008b2f0f26b4ee35224b1bb34
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:39:05 2025 +0200
+
+    usunięto ostatni wers refren-1.txt
+
+commit 06c1166c6e6f79537842914dab9be3beec6e0fd1
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:37:56 2025 +0200
+
+    dodano nowy refren-1.txt
+
+commit cb4c5217bf9ba6d811d35da0dfedc096ad815270
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:28:49 2025 +0200
+
+    usunięto ponownie ostatni wers w refren-1.txt
+
+commit db247960a3f3547baa4a98222a1ce49a727b4a35
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:27:04 2025 +0200
+
+    przywrócono stan pierwotny refren-1.txt
+
+commit 332c2cd0743196daac18e1246a96920608b362eb
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:23:19 2025 +0200
+
+    usunięto ostatni wers w refren-1.txt
+
+commit 5aed135aef8f0912594239f48873cad04ddd13a5
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:18:58 2025 +0200
+
+    dodano ponownie refren-1.txt
+
+commit a3cd6c2e029e1dd41a701205cef6a8d939ac148f
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:14:25 2025 +0200
+
+    Revert "Dodano naprawiony plik refren-1.txt"
+
+    This reverts commit fe4ea28d4c5e899a41d155ba8c637838ff110b3a.
+
+    przywrócono refren-1.txt
+
+commit 847f35e3dcaf1708beffc0a5786e3bd0ae57a769
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:44:45 2025 +0200
+
+    Revert "usunięto ponownie ostatni wers w refren-1.txt"
+
+    This reverts commit 39353fb50ea367b5ceea60ca55ec41f372848bc7.
+    przywrócono ostatni wers refrenu-1.txt
+
+commit 39353fb50ea367b5ceea60ca55ec41f372848bc7
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:43:17 2025 +0200
+
+    usunięto ponownie ostatni wers w refren-1.txt
+
+commit fe4ea28d4c5e899a41d155ba8c637838ff110b3a
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:41:07 2025 +0200
+
+    Dodano naprawiony plik refren-1.txt
+
+commit e79ea89c257e3cc2ce1f0f4ccde322e9c50b5f7c
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:29:30 2025 +0200
+
+    usutnięto ponownie ostatni wers w refren-1.txt
+
+commit 8a7a67589d0a598a63c299596c4bbe081804d3e4
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:22:07 2025 +0200
+
+    przywrócono refren po błędnym revercie
+
+commit 9a8dd862583963e0818e73962f5044ea0908adc2
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:48:17 2025 +0200
+
+    Revert "usunięto ostatni wers z refren-1.txt"
+
+    This reverts commit 7907a29514b543ab2cac0304b7377d8826938ea6.
+    przywrócono ostatni wers w refren-1.txt
+
+commit 7907a29514b543ab2cac0304b7377d8826938ea6
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:43:08 2025 +0200
+
+    usunięto ostatni wers z refren-1.txt
+
+commit 198bbb9bcb32664295b7ed40b16d4d6d7a090190
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:39:13 2025 +0200
+
+    usunięto trzeci refren i dodano refren-3.txt
+
+commit 5f27fb78cc8216af2f17e2ac10922cf0424ed39d
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:38:29 2025 +0200
+
+    dodano trzeci refren do refren-3.txt
+
+commit b6526b05020b93a0d8dbb3fa749a5574f4e077ce
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:36:58 2025 +0200
+
+    usunięto zwrotkę trzecią i dodano zwrotka-3.txt
+
+commit 5a7d4b5862dc84e71c1658e0fccb96ed596fe0ea
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:35:20 2025 +0200
+
+    dodano zwrotkę trzecią do pliku zwrotka-3.txt
+
+commit 2d647d9e71084e44413c5ba0cd4bd11a92056439
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:33:02 2025 +0200
+
+    usunięto drugi refren i dodano refren-2.txt
+
+commit 77f820dd3237b657789af5efb83a2199264fe92e
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:32:15 2025 +0200
+
+    dodano refren do pliku refren-2.txt
+
+commit 40321864e74fb27aa6ed66ad03fab8cafdfb5b99
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:30:45 2025 +0200
+
+    usunięto zwrotkę drugą i dodano zwrotka-2.txt
+
+commit a9f8ab9e385ef0bf20deec42477dc8eb3ec4166f
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:29:56 2025 +0200
+
+    Dodano zwrotkę drugą do pliku zwrotka-2.txt
+
+commit 5b2d467a8d5b8a3fe50b53123d19f7db1ec94524
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:27:29 2025 +0200
+
+    usunięto pierwszy refren i dodano refren-1.txt
+
+commit 3601c5ce18183c032a06d56bc287f3b3304674cf
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:25:29 2025 +0200
+
+    Dodano refren do pliku refren-1.txt
+
+commit e122863054040b604112c771a9cf74bea516cfd1
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:24:09 2025 +0200
+
+    Dodano zwrotkę pierwszą do zwrotka-1.txt
+
+commit a1712dee609df57ff88f96873848cf0419c43081
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:21:49 2025 +0200
+
+    Dodano zwrotka-1.txt
+
+commit d4ce65d858087e63772b9ada8e5a742e9a0c0375
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:20:18 2025 +0200
+
+    Usunięto pierwszą zwrotkę z piosenka.txt
+
+
+
+Mikołaj i Aga@Aga_Miki MINGW64 /c/future_collars/projekty/zadanie-git (master)
+$ git log -p
+commit ba25db9203b83ba5816024a11837a67237f5dcb3 (HEAD -> master)
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:17:12 2025 +0200
+
+    usunięto nazwy plików refren-1.txt refren-2.txt i wstawiono refren kompletny
+
+diff --git a/piosenka.txt b/piosenka.txt
+index 4fe51b3..7997236 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+commit ba25db9203b83ba5816024a11837a67237f5dcb3 (HEAD -> master)
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:17:12 2025 +0200
+
+    usunięto nazwy plików refren-1.txt refren-2.txt i wstawiono refren kompletny
+Date:   Tue Apr 15 17:10:17 2025 +0200
+
+    usunięto niepotrzebny.txt
+
+diff --git a/niepotrzebny.txt b/niepotrzebny.txt
+deleted file mode 100644
+index d800886..0000000
+--- a/niepotrzebny.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-123
+\ No newline at end of file
+
+commit 0b238eb4f455ba315ece47071c52a6067c399bf8
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:09:38 2025 +0200
+
+    usunięto refren-2.txt
+
+diff --git a/refren-2.txt b/refren-2.txt
+deleted file mode 100644
+index e69de29..0000000
+
+commit 57f739912a851bcfa3348edbf7f4a63407e55767
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:08:08 2025 +0200
+
+    usunięte refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+deleted file mode 100644
+index 1020bba..0000000
+:
+Date:   Tue Apr 15 17:10:17 2025 +0200
+
+    usunięto niepotrzebny.txt
+
+diff --git a/niepotrzebny.txt b/niepotrzebny.txt
+deleted file mode 100644
+index d800886..0000000
+--- a/niepotrzebny.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-123
+\ No newline at end of file
+
+commit 0b238eb4f455ba315ece47071c52a6067c399bf8
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:09:38 2025 +0200
+
+    usunięto refren-2.txt
+
+diff --git a/refren-2.txt b/refren-2.txt
+deleted file mode 100644
+index e69de29..0000000
+
+commit 57f739912a851bcfa3348edbf7f4a63407e55767
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:08:08 2025 +0200
+
+    usunięte refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+deleted file mode 100644
+index 1020bba..0000000
+--- a/refren-1.txt
++++ /dev/null
+@@ -1,5 +0,0 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra.
+\ No newline at end of file
+
+commit 4fd98f3964339d92ef428d34ee239a0a347708ff
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:01:59 2025 +0200
+
+    Revert "usunięto ostatni rewers w refren-1.txt"
+
+    This reverts commit c31a2b3bcdc20c894937263380e40b978d450d76.
+
+diff --git a/refren-1.txt b/refren-1.txt
+index b236e9b..1020bba 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,3 +2,4 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra.
+\ No newline at end of file
+
+commit c31a2b3bcdc20c894937263380e40b978d450d76
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 17:00:39 2025 +0200
+
+    usunięto ostatni rewers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 1020bba..b236e9b 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,4 +2,3 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra.
+\ No newline at end of file
+
+commit fec97e81052875bd8cc0dd98e82dd9666f5f3292
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:59:50 2025 +0200
+
+    cały refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 99024a2..1020bba 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,4 +2,4 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
++Lubiła kiedy jestem ja i muzyka gra.
+\ No newline at end of file
+
+commit d85a7665d7823f02a02baa789308dfa446547e15
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:55:51 2025 +0200
+
+    dodano refren 1
+
+diff --git a/refren-1.txt b/refren-1.txt
+index e69de29..99024a2 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -0,0 +1,5 @@
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
+
+commit 8ca4b7da255f7d90bf44571a58039f7ce562b9be
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:52:44 2025 +0200
+
+    nowy pusty plik refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index b236e9b..e69de29 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,4 +0,0 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+
+commit 26e7040c23c4ce80bbdadafe14ae7d6c9e448dfd
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:44:28 2025 +0200
+
+    Revert "usunięto ostatni wers ref-1.txt"
+
+    This reverts commit 891374a3a02866c0d6c2cdc21d35b5885e6d70e0.
+    Przywrócono cały refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 4905f1f..b236e9b 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,4 +1,4 @@
+ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+\ No newline at end of file
++Była jak nieokiełznany wiatr
+
+commit 422d53d0437a2888f9ffbef5cf37fb3795767b79
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:44:01 2025 +0200
+
+    błędy
+
+diff --git a/niepotrzebny.txt b/niepotrzebny.txt
+new file mode 100644
+index 0000000..d800886
+--- /dev/null
++++ b/niepotrzebny.txt
+@@ -0,0 +1 @@
++123
+\ No newline at end of file
+
+commit 891374a3a02866c0d6c2cdc21d35b5885e6d70e0
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:41:41 2025 +0200
+
+    usunięto ostatni wers ref-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index b236e9b..4905f1f 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,4 +1,4 @@
+ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
++Była jak nieokiełznany wiatr
+\ No newline at end of file
+
+commit 3f05490170c52bc008b2f0f26b4ee35224b1bb34
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:39:05 2025 +0200
+
+    usunięto ostatni wers refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index e69de29..b236e9b 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -0,0 +1,4 @@
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
+
+commit 06c1166c6e6f79537842914dab9be3beec6e0fd1
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:37:56 2025 +0200
+
+    dodano nowy refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 4905f1f..e69de29 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,4 +0,0 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+\ No newline at end of file
+
+commit cb4c5217bf9ba6d811d35da0dfedc096ad815270
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:28:49 2025 +0200
+
+    usunięto ponownie ostatni wers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 99024a2..4905f1f 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,5 +1,4 @@
+ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
++Była jak nieokiełznany wiatr
+\ No newline at end of file
+
+commit db247960a3f3547baa4a98222a1ce49a727b4a35
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:27:04 2025 +0200
+
+    przywrócono stan pierwotny refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index b236e9b..99024a2 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,3 +2,4 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
+
+commit 332c2cd0743196daac18e1246a96920608b362eb
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:23:19 2025 +0200
+
+    usunięto ostatni wers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 99024a2..b236e9b 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,4 +2,3 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
+
+commit 5aed135aef8f0912594239f48873cad04ddd13a5
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:18:58 2025 +0200
+
+    dodano ponownie refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index eb6d076..99024a2 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,4 +2,4 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
++Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file
+
+commit a3cd6c2e029e1dd41a701205cef6a8d939ac148f
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 16:14:25 2025 +0200
+
+    Revert "Dodano naprawiony plik refren-1.txt"
+
+    This reverts commit fe4ea28d4c5e899a41d155ba8c637838ff110b3a.
+
+    przywrócono refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 8b13789..eb6d076 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1 +1,5 @@
+-
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
+
+commit 847f35e3dcaf1708beffc0a5786e3bd0ae57a769
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:44:45 2025 +0200
+
+    Revert "usunięto ponownie ostatni wers w refren-1.txt"
+
+    This reverts commit 39353fb50ea367b5ceea60ca55ec41f372848bc7.
+    przywrócono ostatni wers refrenu-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 1e995e8..8b13789 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,5 +1 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+
+
+commit 39353fb50ea367b5ceea60ca55ec41f372848bc7
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:43:17 2025 +0200
+
+    usunięto ponownie ostatni wers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 8b13789..1e995e8 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1 +1,5 @@
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
+
+
+commit fe4ea28d4c5e899a41d155ba8c637838ff110b3a
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:41:07 2025 +0200
+
+    Dodano naprawiony plik refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index eb6d076..8b13789 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,5 +1 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
++
+
+commit e79ea89c257e3cc2ce1f0f4ccde322e9c50b5f7c
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:29:30 2025 +0200
+
+    usutnięto ponownie ostatni wers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 1e995e8..eb6d076 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -2,4 +2,4 @@ Ref.:
+ Ciągle tam, była tu i tam
+ Zawsze miała fajny gest, a w duszy błogi stan
+ Była jak nieokiełznany wiatr
+-
++Lubiła kiedy jestem ja i muzyka gra
+
+commit 8a7a67589d0a598a63c299596c4bbe081804d3e4
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 15:22:07 2025 +0200
+
+    przywrócono refren po błędnym revercie
+
+diff --git a/refren-1.txt b/refren-1.txt
+index e69de29..1e995e8 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -0,0 +1,5 @@
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++
+
+commit 9a8dd862583963e0818e73962f5044ea0908adc2
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:48:17 2025 +0200
+
+    Revert "usunięto ostatni wers z refren-1.txt"
+
+    This reverts commit 7907a29514b543ab2cac0304b7377d8826938ea6.
+    przywrócono ostatni wers w refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index 1e995e8..e69de29 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -1,5 +0,0 @@
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-
+
+commit 7907a29514b543ab2cac0304b7377d8826938ea6
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:43:08 2025 +0200
+
+    usunięto ostatni wers z refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+index e69de29..1e995e8 100644
+--- a/refren-1.txt
++++ b/refren-1.txt
+@@ -0,0 +1,5 @@
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++
+
+commit 198bbb9bcb32664295b7ed40b16d4d6d7a090190
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:39:13 2025 +0200
+
+    usunięto trzeci refren i dodano refren-3.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index 7d5a61b..4fe51b3 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -6,14 +6,7 @@ zwrotka-2.txt
+
+ refren-2.txt
+
+-Nie lubi gdy cicho, a niech to licho, nie żadne ryzyko
+-Nie błyszczy się sikor
+-Mamy to na cito nie świeci się pitos
+-Ajajaj nie ma nic za friko
+-Ajajaj czujemy się syto
+-Ajajaj bo ty to a my to
+-Ajajaj latino bambino
+-Ajajaj polskie dzikie kino
++zwrotka-3.txt
+
+ Ref.:
+ Ciągle tam, była tu i tam
+
+commit 5f27fb78cc8216af2f17e2ac10922cf0424ed39d
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:38:29 2025 +0200
+
+    dodano trzeci refren do refren-3.txt
+
+diff --git a/refren-3.txt b/refren-3.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit b6526b05020b93a0d8dbb3fa749a5574f4e077ce
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:36:58 2025 +0200
+
+    usunięto zwrotkę trzecią i dodano zwrotka-3.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index fe329bc..7d5a61b 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -4,11 +4,7 @@ refren-1.txt
+
+ zwrotka-2.txt
+
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
++refren-2.txt
+
+ Nie lubi gdy cicho, a niech to licho, nie żadne ryzyko
+ Nie błyszczy się sikor
+
+commit 5a7d4b5862dc84e71c1658e0fccb96ed596fe0ea
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:35:20 2025 +0200
+
+    dodano zwrotkę trzecią do pliku zwrotka-3.txt
+
+diff --git a/zwrotka-3.txt b/zwrotka-3.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit 2d647d9e71084e44413c5ba0cd4bd11a92056439
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:33:02 2025 +0200
+
+    usunięto drugi refren i dodano refren-2.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index af5871c..fe329bc 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -2,23 +2,7 @@ zwrotka-1.txt
+
+ refren-1.txt
+
+-Porywista i piękna czuje się wiesz jak
+-To nie Amsterdam ani amnezja
+-Czujemy się pięknie, lecimy jak jet lag
+-Prosto do nieba, potem do piekła,
+-A może nie tak prędko?
+-Zostaniesz mą królewną
+-Choć czasami jak dziecko
+-My wiemy to na pewno!
+-Bawimy się jak w Narni, weź to ogarnij!
+-Lecz nie jak ten bambik!
+-Czujemy się starsi
+-Czujemy się ciekawsi i mamy asa w garści
+-Weź ogarnij! Bo wiemy co jest ambi
+-Bo to nie żarcik, ani nie żaden farcik
+-Czekamy aż po sam świt, a potem aż po sam szczyt
+-Lecisz z nami, czy solo dzisiaj tańczysz?
+-Odpowiedź prosta, powiedz czy temu sprostasz!
++zwrotka-2.txt
+
+ Ref.:
+ Ciągle tam, była tu i tam
+
+commit 77f820dd3237b657789af5efb83a2199264fe92e
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:32:15 2025 +0200
+
+    dodano refren do pliku refren-2.txt
+
+diff --git a/refren-2.txt b/refren-2.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit 40321864e74fb27aa6ed66ad03fab8cafdfb5b99
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:30:45 2025 +0200
+
+    usunięto zwrotkę drugą i dodano zwrotka-2.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index ea197d8..af5871c 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -1,10 +1,6 @@
+ zwrotka-1.txt
+
+-Ref.:
+-Ciągle tam, była tu i tam
+-Zawsze miała fajny gest, a w duszy błogi stan
+-Była jak nieokiełznany wiatr
+-Lubiła kiedy jestem ja i muzyka gra
++refren-1.txt
+
+ Porywista i piękna czuje się wiesz jak
+ To nie Amsterdam ani amnezja
+
+commit a9f8ab9e385ef0bf20deec42477dc8eb3ec4166f
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:29:56 2025 +0200
+
+    Dodano zwrotkę drugą do pliku zwrotka-2.txt
+
+diff --git a/zwrotka-2.txt b/zwrotka-2.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit 5b2d467a8d5b8a3fe50b53123d19f7db1ec94524
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:27:29 2025 +0200
+
+    usunięto pierwszy refren i dodano refren-1.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index 5982fb7..ea197d8 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -1,3 +1,4 @@
++zwrotka-1.txt
+
+ Ref.:
+ Ciągle tam, była tu i tam
+
+commit 3601c5ce18183c032a06d56bc287f3b3304674cf
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:25:29 2025 +0200
+
+    Dodano refren do pliku refren-1.txt
+
+diff --git a/refren-1.txt b/refren-1.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit e122863054040b604112c771a9cf74bea516cfd1
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:24:09 2025 +0200
+
+    Dodano zwrotkę pierwszą do zwrotka-1.txt
+
+diff --git a/zwrotka-1.txt b/zwrotka-1.txt
+new file mode 100644
+index 0000000..e69de29
+
+commit a1712dee609df57ff88f96873848cf0419c43081
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:21:49 2025 +0200
+
+    Dodano zwrotka-1.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+index e4b5ea0..5982fb7 100644
+--- a/piosenka.txt
++++ b/piosenka.txt
+@@ -1,20 +1,3 @@
+-Lubiła być fajna i w centrum miasta
+-Każde spojrzenie to jakby zagadka
+-Lubiła być fajna, ciągle zabawna
+-A w nocy diabeł, taka jest prawda
+-Lubiła być tam ciągle
+-Lubiła te pieniądze
+-Mówiła, że jest dobrze
+-Nie unikała pochlebstw!
+-I na sam szczyt wciąż pięła się!
+-Wiedziała o tym dobrze, że
+-Kiedyś przyjdzie ten dla niej dzień
+-i wtedy będzie mogła żyć tak jak chce!
+-oł je je je!!!
+-I nie ma żartów nie nie nie
+-I nie ma żartów nie nie nie
+-I nie ma żarów nie nie nie
+-Bo ona wie czego chce!
+
+ Ref.:
+ Ciągle tam, była tu i tam
+
+commit d4ce65d858087e63772b9ada8e5a742e9a0c0375
+Author: Mikołaj <miko09@poczta.onet.pl>
+Date:   Tue Apr 15 14:20:18 2025 +0200
+
+    Usunięto pierwszą zwrotkę z piosenka.txt
+
+diff --git a/piosenka.txt b/piosenka.txt
+new file mode 100644
+index 0000000..e4b5ea0
+--- /dev/null
++++ b/piosenka.txt
+@@ -0,0 +1,62 @@
++Lubiła być fajna i w centrum miasta
++Każde spojrzenie to jakby zagadka
++Lubiła być fajna, ciągle zabawna
++A w nocy diabeł, taka jest prawda
++Lubiła być tam ciągle
++Lubiła te pieniądze
++Mówiła, że jest dobrze
++Nie unikała pochlebstw!
++I na sam szczyt wciąż pięła się!
++Wiedziała o tym dobrze, że
++Kiedyś przyjdzie ten dla niej dzień
++i wtedy będzie mogła żyć tak jak chce!
++oł je je je!!!
++I nie ma żartów nie nie nie
++I nie ma żartów nie nie nie
++I nie ma żarów nie nie nie
++Bo ona wie czego chce!
++
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
++
++Porywista i piękna czuje się wiesz jak
++To nie Amsterdam ani amnezja
++Czujemy się pięknie, lecimy jak jet lag
++Prosto do nieba, potem do piekła,
++A może nie tak prędko?
++Zostaniesz mą królewną
++Choć czasami jak dziecko
++My wiemy to na pewno!
++Bawimy się jak w Narni, weź to ogarnij!
++Lecz nie jak ten bambik!
++Czujemy się starsi
++Czujemy się ciekawsi i mamy asa w garści
++Weź ogarnij! Bo wiemy co jest ambi
++Bo to nie żarcik, ani nie żaden farcik
++Czekamy aż po sam świt, a potem aż po sam szczyt
++Lecisz z nami, czy solo dzisiaj tańczysz?
++Odpowiedź prosta, powiedz czy temu sprostasz!
++
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
++
++Nie lubi gdy cicho, a niech to licho, nie żadne ryzyko
++Nie błyszczy się sikor
++Mamy to na cito nie świeci się pitos
++Ajajaj nie ma nic za friko
++Ajajaj czujemy się syto
++Ajajaj bo ty to a my to
++Ajajaj latino bambino
++Ajajaj polskie dzikie kino
++
++Ref.:
++Ciągle tam, była tu i tam
++Zawsze miała fajny gest, a w duszy błogi stan
++Była jak nieokiełznany wiatr
++Lubiła kiedy jestem ja i muzyka gra
+\ No newline at end of file

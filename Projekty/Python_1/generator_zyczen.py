@@ -1,16 +1,19 @@
 import datetime
 
 #Powitanie użytkownika
-print("Witaj w generatorze życzeń urodzinowych")
+print("Witaj w generatorze życzeń urodzinowych!")
 
 #Pytanie do użytkownika o okazję
 kategoria = input("Podaj kategorię (na razie dostępne tylko: urodziny): ").strip().lower()
+
+print(f"DEBUG: użytkownik wpisał: '{kategoria}'")  #<-- debug info
+
 if kategoria != "urodziny":
     print("Inne kategorie są aktualnie niedostępne!")
 else:
     imie_odbiorcy = input("Podaj imię odbiorcy: ")
     rok_urodzenia = int(input("Podaj rok urodzenia: "))
-    napisz_swoja_wiadomosc = input("Napisz swoją spersonalizowaną wiadomość: ")
+    spersonalizowana_wiadomosc = input("Napisz swoją spersonalizowaną wiadomość: ")
     imie_nadawcy = input("Podaj swoje imię (nadawcy): ")
 
 #Obliczanie aktualnego wieku

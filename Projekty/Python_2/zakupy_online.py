@@ -27,7 +27,9 @@ produkt_promocyjny = promocja == "tak"
 
 rabat = 0.15 * (zamowienie_powyzej_100 or klient_vip) + 0.05 * produkt_promocyjny
 
-print("Kwota do zapłaty: {zamowienie}")
+print(f"Kwota przed rabatem: {zamowienie}")
 print(f"Twoja kwota po rabatach: {zamowienie * (1 - rabat)}")
-print(f"Przyznany rabat: {rabat}%")
+print(f"Przyznany rabat: {100 * rabat}%")
+
+
 

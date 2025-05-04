@@ -71,5 +71,9 @@ for idx, paczka in enumerate(ilosc_paczek):
 print("\n--- PODSUMOWANIE ---")
 print(f"Liczba paczek wysłanych: {len(ilosc_paczek)}")
 print(f"Liczba kilogramów wysłanych: {waga_paczek} kg")
-print(f"Suma pustych kilogramów: {suma_pustych} kg")
-print(f"Paczka z największą ilością pustych kg: #{nr_paczki} ({najwiecej_pustych} kg pustych)")
+if suma_pustych > 0:
+    print(f"Suma pustych kilogramów: {suma_pustych} kg")
+    print(f"Paczka z największą ilością pustych kg: #{nr_paczki} ({najwiecej_pustych} kg pustych)")
+else:
+    print("Brak pustych kilogramów – pakowanie było idealne!")
+

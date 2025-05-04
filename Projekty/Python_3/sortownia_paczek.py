@@ -37,7 +37,7 @@ for i in range(ilosc_przedmiotow):
         print("Waga jest nieprawidłowa! Zakańczam operację, paczki zostały wysłane.")
         if aktualna_paczka:
             ilosc_paczek.append(aktualna_paczka)  # Dodaj aktualną paczkę, jeśli coś w niej było
-        break  # Przerywamy dalsze dodawanie paczek
+        break # Przerywamy dalsze dodawanie paczek
 
     # Sprawdzenie, czy przedmiot zmieści się w bieżącej paczce
     if sum(aktualna_paczka) + waga > max_waga_paczki:
@@ -64,6 +64,8 @@ for idx, paczka in enumerate(ilosc_paczek):
     if puste > najwiecej_pustych:
         najwiecej_pustych = puste
         nr_paczki = idx + 1  # +1 bo numerujemy od 1
+
+#musiałem sprawdzić co to ten idx, indeks i pomógł dodatkowo w temacie
 
 # =====================
 # PODSUMOWANIE

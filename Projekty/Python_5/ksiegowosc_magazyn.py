@@ -30,13 +30,13 @@ magazyn = {
 while True:
     print("Dostępne komendy:")
     print("1. saldo","\n2. sprzedaż","\n3. zakup","\n4. konto","\n5. lista","\n6. magazyn","\n7. przegląd","\n8. koniec")
-    komenda = input("Wprowadź komendę: ").strip().lower()
+    komenda = int(input("Wprowadź komendę: ")) #.strip().lower()
     if komenda == "koniec":
         print("Zakończ działanie programu!")
         break
 
     match komenda:
-        case "saldo":
+        case "saldo": #saldo
             try:
                 kwota = float(input("Wprowadź kwotę (może być ujemna): "))
                 konto += kwota
@@ -117,6 +117,50 @@ while True:
 
         case "konto":
             print(f"Aktualny budżet to: {konto:.2f} zł.")
+
+        case "lista":
+            if not magazyn:
+                print("Magazyn jest pusty!")
+            else:
+                print("Stan magazynu:")
+                for produkt, dane in magazyn.items():
+                    print(f"{produkt} {dane['producent']} stan: {dane['ilosc']} sztuki na magazynie, cena {dane['cena']:.2f} zł")
+
+        case "magazyn":
+            produkt = input("Podaj nazwę produktu do wyświetlenia: ").strip().lower()
+            if produkt in magazyn:
+                dane = magazyn[produkt]
+                print(f"Produkt: {produkt.capitalize()}")
+                print(f"Producent: {dane['producent'].capitalize()}")
+                print(f"Rok produkcji: {dane['rok']}")
+                print(f"Rodzaj produktu: {dane['rodzaj'].capitalize()}")
+                print(f"Ilość na magazynie: {dane['ilosc']}")
+                print(f"Cena za sztukę: {dane['cena']:.2f} zł")
+            else:
+                print(f"Produkt '{produkt}' nie jest dostępny na magazynie.")
+
+        case "przegląd":
+            od = input("Podaj wartość 'od' (numer transakcji): ")
+            do = input("Podaj wartość 'do' (numer transakcji): ")
+            if od:
+                od = int(od)
+            else:
+                od = 0
+            if do:
+                do = int(do)
+            else:
+                do = len(operacje_finansowe)
+            print(operacje_finansowe[od:do])
+
+        case "koniec":
+            print("Zakańczam działanie programu")
+            break
+
+
+
+
+
+
 
 
 

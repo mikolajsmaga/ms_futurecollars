@@ -30,13 +30,13 @@ magazyn = {
 while True:
     print("Dostępne komendy:")
     print("1. saldo","\n2. sprzedaż","\n3. zakup","\n4. konto","\n5. lista","\n6. magazyn","\n7. przegląd","\n8. koniec")
-    komenda = int(input("Wprowadź komendę: ")) #.strip().lower()
-    if komenda == "koniec":
+    komenda = input("Wprowadź komendę (1-8): ")
+    if komenda == "8": #koniec
         print("Zakończ działanie programu!")
         break
 
     match komenda:
-        case "saldo": #saldo
+        case "1": #saldo
             try:
                 kwota = float(input("Wprowadź kwotę (może być ujemna): "))
                 konto += kwota
@@ -46,13 +46,13 @@ while True:
 
             except ValueError:
                 print("Błąd! Wprowadzona wartość jest nie poprawna, spróbuj jeszcze raz.")
-        case "zakup":
+        case "2": #zakup
             try:
                 produkt = input("Podaj nazwę produktu: ").strip().lower()
                 producent = input("Podaj nazwę producenta: ").lower().lower()
                 rodzaj = input("Podaj rodzaj produktu: ").lower().lower()
                 ilosc = int(input("Podaj ilość: "))
-                rok = int(input("Podaj rok: "))
+                rok = int(input("Podaj rok produkcji: "))
                 cena = float(input("Cena za sztukę: "))
 
                 if cena <= 0 or ilosc <= 0 or rok < 1990:
@@ -83,22 +83,22 @@ while True:
             except ValueError:
                     print("Błąd: podano dane w nieprawidłowym formacie.")
 
-        case "sprzedaż":
+        case "3": #sprzedaż
             try:
                 produkt = input("Podaj nazwę produktu do sprzedaży: ").strip().lower()
 
                 if produkt not in magazyn:
-                    print("❌ Podany produkt jest niedostępny w magazynie.")
+                    print("Podany produkt jest niedostępny w magazynie.")
                     continue
 
                 ilosc = int(input("Podaj ilość sztuk do sprzedaży: "))
 
                 if ilosc <= 0:
-                    print("❌ Ilość musi być większa niż 0.")
+                    print("Ilość musi być większa niż 0.")
                     continue
 
                 if magazyn[produkt]["ilosc"] < ilosc:
-                    print(f"❌ W magazynie jest tylko {magazyn[produkt]['ilosc']} sztuk.")
+                    print(f"W magazynie jest tylko {magazyn[produkt]['ilosc']} sztuk.")
                     continue
 
                 cena = magazyn[produkt]["cena"]
@@ -107,18 +107,18 @@ while True:
                 magazyn[produkt]["ilosc"] -= ilosc
 
                 if magazyn[produkt]["ilosc"] == 0:
-                    print(f"ℹ️ Produkt {produkt} jest teraz wyprzedany – brak sztuk na stanie.")
+                    print(f"Produkt {produkt} jest teraz wyprzedany – brak sztuk na stanie.")
 
                 operacje_finansowe.append(("sprzedaż", produkt, ilosc, cena))
-                print(f"✅ Sprzedano {ilosc} x {produkt} po {cena:.2f} zł = {przychod:.2f} zł")
+                print(f"Sprzedano {ilosc} x {produkt} po {cena:.2f} zł = {przychod:.2f} zł")
 
             except ValueError:
-                print("❌ Błąd: podano nieprawidłową wartość.")
+                print("Błąd: podano nieprawidłową wartość.")
 
-        case "konto":
+        case "4": #konto
             print(f"Aktualny budżet to: {konto:.2f} zł.")
 
-        case "lista":
+        case "5": #lista
             if not magazyn:
                 print("Magazyn jest pusty!")
             else:
@@ -126,7 +126,7 @@ while True:
                 for produkt, dane in magazyn.items():
                     print(f"{produkt} {dane['producent']} stan: {dane['ilosc']} sztuki na magazynie, cena {dane['cena']:.2f} zł")
 
-        case "magazyn":
+        case "6": #magazyn
             produkt = input("Podaj nazwę produktu do wyświetlenia: ").strip().lower()
             if produkt in magazyn:
                 dane = magazyn[produkt]
@@ -139,7 +139,7 @@ while True:
             else:
                 print(f"Produkt '{produkt}' nie jest dostępny na magazynie.")
 
-        case "przegląd":
+        case "7": #przegląd
             od = input("Podaj wartość 'od' (numer transakcji): ")
             do = input("Podaj wartość 'do' (numer transakcji): ")
             if od:
@@ -152,7 +152,7 @@ while True:
                 do = len(operacje_finansowe)
             print(operacje_finansowe[od:do])
 
-        case "koniec":
+        case "8": #koniec
             print("Zakańczam działanie programu")
             break
 

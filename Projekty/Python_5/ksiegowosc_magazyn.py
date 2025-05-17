@@ -1,10 +1,32 @@
 
 print("Witaj w programie księgowym! Zaczynamy?")
 
-konto = 0.0
+konto = 1000.0 #Stan konta
 operacje_finansowe = []
 komenda = ["saldo", "sprzedaż", "zakup", "konto", "lista", "magazyn", "przegląd", "koniec"]
-
+magazyn = {
+    "laptop": {
+        "producent": "Dell",
+        "rok": 2023,
+        "rodzaj": "Elektronika",
+        "ilosc": 5,
+        "cena": 3000.0
+    },
+    "monitor": {
+        "producent": "LG",
+        "rok": 2022,
+        "rodzaj": "Elektronika",
+        "ilosc": 2,
+        "cena": 800.0
+    },
+    "klawiatura": {
+        "producent": "Logitech",
+        "rok": 2025,
+        "rodzaj": "Elektronika",
+        "ilosc": 10,
+        "cena": 750.0
+    }
+}
 while True:
     print("Dostępne komendy:")
     print("1. saldo","\n2. sprzedaż","\n3. zakup","\n4. konto","\n5. lista","\n6. magazyn","\n7. przegląd","\n8. koniec")
@@ -15,39 +37,88 @@ while True:
 
     match komenda:
         case "saldo":
-            kwota = float(input("Wprowadź kwotę (może być ujemna): "))
-            konto += kwota
-            operacje_finansowe.append(("saldo", kwota))
-            if kwota < 0:
-                print("Masz debet na koncie!")
+            try:
+                kwota = float(input("Wprowadź kwotę (może być ujemna): "))
+                konto += kwota
+                operacje_finansowe.append(("saldo", kwota))
+                if kwota < 0:
+                    print("Masz debet na koncie!")
+
+            except ValueError:
+                print("Błąd! Wprowadzona wartość jest nie poprawna, spróbuj jeszcze raz.")
+        case "zakup":
+            try:
+                produkt = input("Podaj nazwę produktu: ").strip().lower()
+                producent = input("Podaj nazwę producenta: ").lower().lower()
+                rodzaj = input("Podaj rodzaj produktu: ").lower().lower()
+                ilosc = int(input("Podaj ilość: "))
+                rok = int(input("Podaj rok: "))
+                cena = float(input("Cena za sztukę: "))
+
+                if cena <= 0 or ilosc <= 0 or rok < 1990:
+                    print("Błąd: Cena, ilość lub rok są nieprawidłowe. Zakup anulowany.")
+                    break
+
+                koszt = cena * ilosc
+                if konto < koszt:
+                    print("Nie masz wystarczających środków na zakup!")
+                    break
+
+                konto -= koszt
+                if produkt in magazyn:
+                    magazyn[produkt]["ilosc"] += ilosc
+                    magazyn[produkt]["cena"] = cena
+                else:
+                    magazyn[produkt] = {
+                        "producent": producent,
+                        "rok": rok,
+                        "rodzaj": rodzaj,
+                        "ilosc": ilosc,
+                        "cena": cena,
+                    }
+
+                operacje_finansowe.append(("zakup", produkt, producent, rok, rodzaj, cena, ilosc))
+                print(f"Zakupiono {ilosc} * {produkt} za {koszt:.2f} zł")
+
+            except ValueError:
+                    print("Błąd: podano dane w nieprawidłowym formacie.")
+
+        case "sprzedaż":
+            try:
+                produkt = input("Podaj nazwę produktu do sprzedaży: ").strip().lower()
+
+                if produkt not in magazyn:
+                    print("❌ Podany produkt jest niedostępny w magazynie.")
+                    continue
+
+                ilosc = int(input("Podaj ilość sztuk do sprzedaży: "))
+
+                if ilosc <= 0:
+                    print("❌ Ilość musi być większa niż 0.")
+                    continue
+
+                if magazyn[produkt]["ilosc"] < ilosc:
+                    print(f"❌ W magazynie jest tylko {magazyn[produkt]['ilosc']} sztuk.")
+                    continue
+
+                cena = magazyn[produkt]["cena"]
+                przychod = cena * ilosc
+                konto += przychod
+                magazyn[produkt]["ilosc"] -= ilosc
+
+                if magazyn[produkt]["ilosc"] == 0:
+                    print(f"ℹ️ Produkt {produkt} jest teraz wyprzedany – brak sztuk na stanie.")
+
+                operacje_finansowe.append(("sprzedaż", produkt, ilosc, cena))
+                print(f"✅ Sprzedano {ilosc} x {produkt} po {cena:.2f} zł = {przychod:.2f} zł")
+
+            except ValueError:
+                print("❌ Błąd: podano nieprawidłową wartość.")
+
+        case "konto":
+            print(f"Aktualny budżet to: {konto:.2f} zł.")
 
 
 
 
-print(f"Twój stan konta: {konto}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#print(f"Twój stan konta: {konto}")

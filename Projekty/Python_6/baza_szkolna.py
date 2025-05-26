@@ -111,16 +111,14 @@ def zarzadzaj_uzytkownikiem():
 
             case "klasa":
                 klasa = input("Podaj nazwę klasy (np. 3C): ").strip().upper()
-                wyswietl_klase(klasa)
+                info_klas(klasa)
 
             case "koniec":
                 print("Powrót do menu głównego.")
                 break
 
 
-def info_ucznia(): #Zapytanie o imię i nazwisko #or info_ucznia(imie, nazwisko)
-    imie = input("Podaj imię ucznia: ").strip()
-    nazwisko = input("Podaj nazwisko ucznia: ").strip()
+def info_ucznia(imie, nazwisko): #Zapytanie o imię i nazwisko #or info_ucznia(imie, nazwisko)
 
     uczen_znaleziony = None #Przeszukanie ucznia w liście uczniów przez pętle for
     for uczen in uczniowie:

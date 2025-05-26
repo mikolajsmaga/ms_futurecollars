@@ -98,33 +98,36 @@ def nowy_uzytkownik():  # Utwórz
 
 def zarzadzaj_uzytkownikiem():
     while True:
-        wybor = (
-            input("\nWybierz opcję: uczeń / nauczyciel / wychowawca / klasa / koniec: ")
-            .strip()
-            .lower()
-        )
+        print("\nZarządzanie użytkownikami — wybierz opcję:")
+        print("1. uczeń")
+        print("2. nauczyciel")
+        print("3. wychowawca")
+        print("4. klasa")
+        print("5. koniec")
+
+        wybor = input("Twój wybór (1–5 lub wpisz nazwę): ").strip().lower()
 
         match wybor:
-            case "uczeń" | "uczen":
+            case "1" | "uczeń" | "uczen":
                 imie = input("Podaj imię ucznia: ").strip()
                 nazwisko = input("Podaj nazwisko ucznia: ").strip()
                 info_ucznia(imie, nazwisko)
 
-            case "nauczyciel":
+            case "2" | "nauczyciel":
                 imie = input("Podaj imię nauczyciela: ").strip()
                 nazwisko = input("Podaj nazwisko nauczyciela: ").strip()
                 info_nauczyciela(imie, nazwisko)
 
-            case "wychowawca":
+            case "3" | "wychowawca":
                 imie = input("Podaj imię wychowawcy: ").strip()
                 nazwisko = input("Podaj nazwisko wychowawcy: ").strip()
                 info_wychowawcy(imie, nazwisko)
 
-            case "klasa":
+            case "4" | "klasa":
                 klasa = input("Podaj nazwę klasy (np. 3C): ").strip().upper()
                 info_klas(klasa)
 
-            case "koniec":
+            case "5" | "koniec":
                 print("Powrót do menu głównego.")
                 break
 

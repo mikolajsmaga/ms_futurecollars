@@ -1,12 +1,4 @@
 # BAZA SZKOLNA
-
-print("Witamy w szkolnej bazie, co chcesz zrobić?")
-print("1. Utwórz (Nowy użytkownik)")
-print("2. Zarządzanie użytkownikiem")
-print("3. Zakończ")
-wariant = input("Wybierz opcję (1-3): ")
-
-
 # Klasy użytkowników
 class Uczen:
     def __init__(self, imie, nazwisko, klasa):
@@ -62,7 +54,7 @@ def nowy_uzytkownik():  # Utwórz
         print("1. Uczeń")
         print("2. Nauczyciel")
         print("3. Wychowawca")
-        print("4. Koniec")
+        print("4. Wróć do Menu Główne")
         opcja = input("Wybierz opcję (1-4): ").strip().lower()
         if opcja in ["1", "uczen", "uczeń", "Uczen", "Uczeń"]:  # UCZEŃ
             imie = input("Podaj imię ucznia: ").strip()
@@ -96,7 +88,7 @@ def nowy_uzytkownik():  # Utwórz
             wychowawcy.append(Wychowawca(imie, nazwisko, klasa))
             print(f"Wychowawcą klasy {klasa} jest {imie} {nazwisko}.")
 
-        elif opcja in ["4", "koniec"]:  # ZAKAŃCZAMY I WRACAMY DO MENU
+        elif opcja in ["4", "koniec", "menu"]:  # ZAKAŃCZAMY I WRACAMY DO MENU
             print("Powrót do głównego menu.")
             break
 
@@ -254,3 +246,19 @@ def info_klas(klasa):
             )
     else:
         print("- Brak przypisanych nauczycieli.")
+
+while True:
+    print("Witamy w szkolnej bazie, co chcesz zrobić?")
+    print("1. Utwórz (Nowy użytkownik)")
+    print("2. Zarządzanie użytkownikiem")
+    print("3. Zakończ")
+    wariant = input("Wybierz opcję (1-3): ")
+    if wariant == "1":
+        nowy_uzytkownik()  # tu wywołujemy funkcję do tworzenia użytkownika
+    elif wariant == "2":
+        zarzadzaj_uzytkownikiem()  # tu funkcję do zarządzania użytkownikami
+    elif wariant == "3":
+        print("Do zobaczenia!")
+        break  # wychodzimy z pętli, kończymy program
+    else:
+        print("Nieprawidłowy wybór, spróbuj ponownie.")

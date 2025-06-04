@@ -1,4 +1,7 @@
-# BAZA SZKOLNA
+# ─────────────────────────────────────────────────────────────────────
+# BAZA SZKOLNA – SYSTEM ZARZĄDZANIA UCZNIAMI, NAUCZYCIELAMI I KLASAMI
+# Autor: [Mikołaj] | Data: [04.06.2025]
+# ─────────────────────────────────────────────────────────────────────
 # Klasy użytkowników
 class Uczen:
     def __init__(self, imie, nazwisko, klasa):
@@ -48,50 +51,62 @@ wychowawcy = []
 
 # klasy = []
 # Funkcja tworzenia nowego użytkownika
+
+def dodaj_ucznia():
+    imie = input("Podaj imię ucznia: ").strip()
+    nazwisko = input("Podaj nazwisko ucznia: ").strip()
+    klasa = input("Podaj klasę ucznia: ").strip().upper()
+
+    uczniowie.append(Uczen(imie, nazwisko, klasa))
+    print(f"Uczeń {imie} {nazwisko} został dodany do klasy {klasa}.")
+    for uczen in uczniowie:
+        if uczen.imie.lower() == imie.lower() and uczen.nazwisko.lower() == nazwisko.lower() and uczen.klasa.upper() == klasa:
+            print("Uczeń już istnieje w bazie.")
+            return
+
+def dodaj_nauczyciela():
+    imie = input("Podaj imię nauczyciela: ").strip()
+    nazwisko = input("Podaj nazwisko nauczyciela: ").strip()
+    przedmiot = input("Podaj przedmiot nauczania: ").strip()
+
+    klasy = []
+    print(f"Podaj klasy, w których {imie} {nazwisko} będzie uczyć przedmiotu {przedmiot}:")
+    while True:
+        klasa = input("Podaj klasę (Enter by zakończyć): ").strip().upper()
+        if not klasa:
+            break
+        klasy.append(klasa)
+
+    nauczyciele.append(Nauczyciel(imie, nazwisko, przedmiot, klasy))
+    print(f"Nauczyciel {imie} {nazwisko} został dodany.")
+
+def dodaj_wychowawce():
+    imie = input("Podaj imię wychowawcy: ").strip()
+    nazwisko = input("Podaj nazwisko wychowawcy: ").strip()
+    klasa = input("Podaj klasę, której będzie wychowawcą: ").strip().upper()
+
+    wychowawcy.append(Wychowawca(imie, nazwisko, klasa))
+    print(f"Wychowawcą klasy {klasa} został {imie} {nazwisko}.")
+
 def nowy_uzytkownik():  # Utwórz
     while True:
-        print("Stwórz nowego użytkownika: \n")
+        print("\nStwórz nowego użytkownika:")
         print("1. Uczeń")
         print("2. Nauczyciel")
         print("3. Wychowawca")
-        print("4. Wróć do Menu Główne")
+        print("4. Powrót")
+
         opcja = input("Wybierz opcję (1-4): ").strip().lower()
-        if opcja in ["1", "uczen", "uczeń", "Uczen", "Uczeń"]:  # UCZEŃ
-            imie = input("Podaj imię ucznia: ").strip()
-            nazwisko = input("Podaj nazwisko ucznia: ").strip()
-            klasa = input("Podaj klasę ucznia: ").strip().upper()
 
-            uczniowie.append(Uczen(imie, nazwisko, klasa))
-            print(f"Uczeń {imie} {nazwisko}został dodany do klasy {klasa}.")
-
-        elif opcja in ["2", "nauczyciel", "Nauczyciel"]:  # NAUCZYCIEL
-            imie = input("Podaj imię nauczyciela: ")
-            nazwisko = input("Podaj nazwisko nauczyciela: ")
-            przedmiot = input("Podaj przedmiot nauczania: ")
-
-            klasy = []  # OPCJA W JAKIEJ KLASIE NAUCZANIE
-            print(f"Podaj klasy w których będzie nauczanie przedmiotu {przedmiot}: ")
-            while True:
-                klasa = input("Podaj klasę: ").strip().upper()
-                if klasa == "":
-                    break
-                klasy.append(klasa)
-                # Tworzymy obiekt nauczyciela i dodajemy do listy
-            nauczyciele.append(Nauczyciel(imie, nazwisko, przedmiot, klasy))
-            print(f"Nauczyciel {imie} {nazwisko} dodany do przedmiotu {przedmiot}.")
-
-        elif opcja in ["3", "wychowawca", "Wychowawca"]:  # WYCHOWAWCA
-            imie = input("Podaj imie wychowawcy: ")
-            nazwisko = input("Podaj nazwisko wychowawcy: ")
-            klasa = input("Podaj klasę której będziesz wychowawcą: ")
-            # Tworzymy obiekt wychowawcy i dodajemy do listy
-            wychowawcy.append(Wychowawca(imie, nazwisko, klasa))
-            print(f"Wychowawcą klasy {klasa} jest {imie} {nazwisko}.")
-
-        elif opcja in ["4", "koniec", "menu"]:  # ZAKAŃCZAMY I WRACAMY DO MENU
-            print("Powrót do głównego menu.")
+        if opcja in ("1", "uczen", "uczeń"):
+            dodaj_ucznia()
+        elif opcja in ("2", "nauczyciel"):
+            dodaj_nauczyciela()
+        elif opcja in ("3", "wychowawca"):
+            dodaj_wychowawce()
+        elif opcja in ("4", "koniec", "powrót", "powrot"):
+            print("Powrót do menu głównego.")
             break
-
         else:
             print("Nieprawidłowy wybór. Spróbuj ponownie.")
 
@@ -99,11 +114,11 @@ def nowy_uzytkownik():  # Utwórz
 def zarzadzaj_uzytkownikiem():
     while True:
         print("\nZarządzanie użytkownikami — wybierz opcję:")
-        print("1. uczeń")
-        print("2. nauczyciel")
-        print("3. wychowawca")
-        print("4. klasa")
-        print("5. koniec")
+        print("1. Uczeń")
+        print("2. Nauczyciel")
+        print("3. Wychowawca")
+        print("4. Klasa")
+        print("5. Koniec")
 
         wybor = input("Twój wybór (1–5 lub wpisz nazwę): ").strip().lower()
 
@@ -125,7 +140,7 @@ def zarzadzaj_uzytkownikiem():
 
             case "4" | "klasa":
                 klasa = input("Podaj nazwę klasy (np. 3C): ").strip().upper()
-                info_klas(klasa)
+                wyswietl_info_o_klasie(klasa)
 
             case "5" | "koniec":
                 print("Powrót do menu głównego.")
@@ -190,7 +205,6 @@ def info_nauczyciela(imie, nazwisko):
     for klasa in nauczyciel_znaleziony.klasy:
         print(f"- Klasa {klasa}")
 
-
 def info_wychowawcy(imie, nazwisko):
     for wych in wychowawcy:
         if (
@@ -203,34 +217,29 @@ def info_wychowawcy(imie, nazwisko):
             return
     print("Nie znaleziono wychowawcy.")
 
-
-def info_klas(klasa):
-    klasa = klasa.upper()  # Upewniamy się, że porównujemy w jednolitym formacie
-
-    # Szukamy wychowawcy tej klasy
-    wychowawca_klasy = None
+def znajdz_wychowawce_dla_klasy(nazwa_klasy):
     for wychowawca in wychowawcy:
-        if wychowawca.klasa_przypisana.upper() == klasa:
-            wychowawca_klasy = wychowawca
-            break
+        if wychowawca.klasa_przypisana.upper() == nazwa_klasy:
+            return wychowawca
+    return None
 
-    # Szukamy uczniów tej klasy
-    uczniowie_klasy = []
-    for uczen in uczniowie:
-        if uczen.klasa.upper() == klasa:
-            uczniowie_klasy.append(uczen)
+def znajdz_uczniow_z_klasy(nazwa_klasy):
+    return [uczen for uczen in uczniowie if uczen.klasa.upper() == nazwa_klasy]
 
-    # Szukamy nauczycieli uczących w tej klasie
-    nauczyciele_klasy = []
-    for nauczyciel in nauczyciele:
-        if klasa in nauczyciel.klasy:
-            nauczyciele_klasy.append(nauczyciel)
+def znajdz_nauczycieli_dla_klasy(nazwa_klasy):
+    return [nauczyciel for nauczyciel in nauczyciele if nazwa_klasy in nauczyciel.klasy]
 
-    # Wyświetlamy dane klasy
+def wyswietl_info_o_klasie(klasa):
+    klasa = klasa.upper()
+
+    wychowawca = znajdz_wychowawce_dla_klasy(klasa)
+    uczniowie_klasy = znajdz_uczniow_z_klasy(klasa)
+    nauczyciele_klasy = znajdz_nauczycieli_dla_klasy(klasa)
+
     print(f"\nInformacje o klasie {klasa}:")
 
-    if wychowawca_klasy:
-        print(f"- Wychowawca: {wychowawca_klasy.imie} {wychowawca_klasy.nazwisko}")
+    if wychowawca:
+        print(f"- Wychowawca: {wychowawca.imie} {wychowawca.nazwisko}")
     else:
         print("- Brak przypisanego wychowawcy.")
 
@@ -244,24 +253,28 @@ def info_klas(klasa):
     if nauczyciele_klasy:
         print("- Nauczyciele:")
         for nauczyciel in nauczyciele_klasy:
-            print(
-                f"  • {nauczyciel.imie} {nauczyciel.nazwisko} – {nauczyciel.przedmiot}"
-            )
+            print(f"  • {nauczyciel.imie} {nauczyciel.nazwisko} – {nauczyciel.przedmiot}")
     else:
         print("- Brak przypisanych nauczycieli.")
 
-while True:
-    print("Witamy w szkolnej bazie, co chcesz zrobić?")
-    print("1. Utwórz (Nowy użytkownik)")
-    print("2. Zarządzanie użytkownikiem")
-    print("3. Zakończ")
-    wariant = input("Wybierz opcję (1-3): ")
-    if wariant == "1":
-        nowy_uzytkownik()  # tu wywołujemy funkcję do tworzenia użytkownika
-    elif wariant == "2":
-        zarzadzaj_uzytkownikiem()  # tu funkcję do zarządzania użytkownikami
-    elif wariant == "3":
-        print("Do zobaczenia!")
-        break  # wychodzimy z pętli, kończymy program
-    else:
-        print("Nieprawidłowy wybór, spróbuj ponownie.")
+def menu_glowne():
+    while True:
+        print("\n--- MENU GŁÓWNE ---")
+        print("1. Dodaj użytkownika")
+        print("2. Zarządzaj użytkownikiem")
+        print("3. Zakończ")
+
+        wybor = input("Wybierz opcję (1–3): ").strip()
+
+        if wybor == "1":
+            nowy_uzytkownik()
+        elif wybor == "2":
+            zarzadzaj_uzytkownikiem()
+        elif wybor == "3":
+            print("Zakończono program.")
+            break
+        else:
+            print("Nieprawidłowy wybór.")
+
+if __name__ == "__main__":
+    menu_glowne()

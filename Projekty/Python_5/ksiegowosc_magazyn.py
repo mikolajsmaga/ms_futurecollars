@@ -142,7 +142,7 @@ file_handler.historia = operacje_finansowe
 file_handler.save_magazyn_file()
 file_handler.save_saldo_file()
 file_handler.save_historia_file()
-g
+
 
 
 

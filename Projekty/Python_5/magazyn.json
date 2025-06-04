@@ -1,0 +1,23 @@
+{
+      "laptop": {
+            "producent": "Dell",
+            "rok": 2023,
+            "rodzaj": "Elektronika",
+            "ilosc": 5,
+            "cena": 3000.0
+      },
+      "monitor": {
+            "producent": "LG",
+            "rok": 2022,
+            "rodzaj": "Elektronika",
+            "ilosc": 2,
+            "cena": 800.0
+      },
+      "klawiatura": {
+            "producent": "Logitech",
+            "rok": 2025,
+            "rodzaj": "Elektronika",
+            "ilosc": 0,
+            "cena": 750.0
+      }
+}

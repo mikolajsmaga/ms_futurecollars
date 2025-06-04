@@ -58,7 +58,7 @@ def dodaj_ucznia():
     klasa = input("Podaj klasę ucznia: ").strip().upper()
 
     uczniowie.append(Uczen(imie, nazwisko, klasa))
-    print(f"Uczeń {imie} {nazwisko} został dodany do klasy {klasa}.")
+    print(f"Uczeń {imie.capitalize()} {nazwisko.capitalize()} został dodany do klasy {klasa}.")
     for uczen in uczniowie:
         if uczen.imie.lower() == imie.lower() and uczen.nazwisko.lower() == nazwisko.lower() and uczen.klasa.upper() == klasa:
             print("Uczeń już istnieje w bazie.")
@@ -70,7 +70,7 @@ def dodaj_nauczyciela():
     przedmiot = input("Podaj przedmiot nauczania: ").strip()
 
     klasy = []
-    print(f"Podaj klasy, w których {imie} {nazwisko} będzie uczyć przedmiotu {przedmiot}:")
+    print(f"Podaj klasy, w których {imie.capitalize()} {nazwisko.capitalize()} będzie uczyć przedmiotu {przedmiot.capitalize()}:")
     while True:
         klasa = input("Podaj klasę (Enter by zakończyć): ").strip().upper()
         if not klasa:
@@ -78,7 +78,7 @@ def dodaj_nauczyciela():
         klasy.append(klasa)
 
     nauczyciele.append(Nauczyciel(imie, nazwisko, przedmiot, klasy))
-    print(f"Nauczyciel {imie} {nazwisko} został dodany.")
+    print(f"Nauczyciel {imie.capitalize()} {nazwisko.capitalize()} został dodany.")
 
 def dodaj_wychowawce():
     imie = input("Podaj imię wychowawcy: ").strip()

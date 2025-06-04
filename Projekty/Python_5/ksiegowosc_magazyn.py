@@ -5,11 +5,19 @@ operacje_finansowe = file_handler.historia
 magazyn = file_handler.magazyn
 
 print("Witaj w programie księgowym! Zaczynamy?")
-komenda = ["saldo", "sprzedaż", "zakup", "konto", "lista", "magazyn", "przegląd", "koniec"]
+
 while True:
-    print("Wybierz opcję:")
-    print("1. saldo","\n2. sprzedaż","\n3. zakup","\n4. konto","\n5. lista","\n6. magazyn","\n7. przegląd","\n8. koniec")
-    komenda = input("Wprowadź komendę (1-8): ")
+    print("\nWybierz jedną z poniższych opcji (podaj numer):")
+    komenda = input("""
+    1. Zmień saldo
+    2. Zakup produkt
+    3. Sprzedaj produkt
+    4. Sprawdź stan konta
+    5. Zobacz cały magazyn
+    6. Szczegóły produktu z magazynu
+    7. Historia operacji
+    8. Wyjście z programu
+>>> """)
 
     match komenda:
         case "1": #saldo
@@ -40,7 +48,7 @@ while True:
                 koszt = cena * ilosc
                 if konto < koszt:
                     print("Nie masz wystarczających środków na zakup!")
-                    break
+                    continue
 
                 konto -= koszt
                 if produkt in magazyn:

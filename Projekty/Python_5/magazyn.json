@@ -19,5 +19,12 @@
             "rodzaj": "Elektronika",
             "ilosc": 0,
             "cena": 750.0
+      },
+      "fotel gamingowy": {
+            "producent": "sense",
+            "rok": 2024,
+            "rodzaj": "krzeslo biurowe",
+            "ilosc": 5,
+            "cena": 499.0
       }
 }

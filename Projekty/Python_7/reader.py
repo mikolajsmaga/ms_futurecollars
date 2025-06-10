@@ -1,3 +1,5 @@
+#----URUCHAMIANIE TYLKO Z TERMINALA!!!----#
+
 import datetime     # Import biblioteki do obsługi daty i czasu (w tym kodzie nie jest jeszcze używana)
 import sys          # Import modułu do obsługi argumentów wiersza poleceń
 import csv          # Import modułu do czytania i zapisywania plików CSV

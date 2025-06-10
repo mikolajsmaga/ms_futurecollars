@@ -1,0 +1,42 @@
+[
+    {
+        "full_name": "Poland",
+        "capital": "Warsaw",
+        "region": "Europe",
+        "subregion": "Central Europe",
+        "population": 37950802,
+        "languages": "Polish",
+        "currency": "Polish z\u0142oty (PLN)",
+        "flag": "https://flagcdn.com/pl.svg"
+    },
+    {
+        "full_name": "Canada",
+        "capital": "Ottawa",
+        "region": "Americas",
+        "subregion": "North America",
+        "population": 38005238,
+        "languages": "English, French",
+        "currency": "Canadian dollar (CAD)",
+        "flag": "https://flagcdn.com/ca.svg"
+    },
+    {
+        "full_name": "Italy",
+        "capital": "Rome",
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "population": 59554023,
+        "languages": "Italian, Catalan",
+        "currency": "Euro (EUR)",
+        "flag": "https://flagcdn.com/it.svg"
+    },
+    {
+        "full_name": "Greece",
+        "capital": "Athens",
+        "region": "Europe",
+        "subregion": "Southern Europe",
+        "population": 10715549,
+        "languages": "Greek",
+        "currency": "Euro (EUR)",
+        "flag": "https://flagcdn.com/gr.svg"
+    }
+]

@@ -1,15 +1,16 @@
 from datetime import datetime, timedelta
+
+from weather_utility import check_rain_status
 from weather_check_file_handler import FileHandler
 from geopy.geocoders import Nominatim
 import requests
-from weather_utility import check_rain_status
 
 # Inicjalizacja obsługi pliku
 file_handler = FileHandler("weather_data.json")
 
 # Inputy od użytkownika
 city = input("Podaj swoje miasto: ")
-date = input("Podaj datę w formacie YYYY-MM-DD: ")
+#date = input("Podaj datę w formacie YYYY-MM-DD: ")
 
 while True:
     date = input("Podaj datę w formacie YYYY-MM-DD (lub zostaw puste dla jutrzejszej daty): ")
@@ -32,15 +33,16 @@ if city_info != "Data not found":
     print("Wynik z pliku:", city_info)
 else:
     # Funkcja do pobrania danych z API – musisz ją jeszcze zdefiniować
-    rain_sum = get_rain_sum(city, date)
+    rain_sum = check_rain_status(city, date)
 
     # Zapisujemy nowy wynik
     file_handler[city, date] = rain_sum
     file_handler.write_to_file()
     print("Wynik z API:", rain_sum)
 
-geolocator = Nominatim(user_agent="mikola_smaga_app")
-location = geolocator.geocode(city)
-print(location.address)
-print((location.latitude, location.longitude))
-print(location.raw)
+#Mozliwosc testow
+# geolocator = Nominatim(user_agent="mikola_smaga_app")
+# location = geolocator.geocode(city)
+# print(location.address)
+# print((location.latitude, location.longitude))
+# print(location.raw)

@@ -23,14 +23,20 @@ class WeatherForecast:
             json.dump(self.data, file, ensure_ascii=False,
                       indent=4)  # Zapisuje dane jako JSON: nie zamienia polskich znaków, ładnie sformatowane
 
-    def __getitem__(self, date): #Pobieranie wartości (z konkretnego klucza) - GET to ZAPYTANIE CO JEST POD KLUCZEM
-        if date in self.data: #Warunek jeśli wartość jest w data
-            return self.data[date]  # Zwróć przypisaną pogodę dla tej daty
+    def __getitem__(self, key): #Pobieranie wartości (z konkretnego klucza) - GET to ZAPYTANIE CO JEST POD KLUCZEM
+        city, date = key
+        if city in self.data and date in self.data[city]: #Warunek jeśli wartość jest w data
+            return self.data[city][date]  # Zwróć przypisaną pogodę dla tej daty
         else: #Jeśli nie ma:
-            return self.data.get(date, "Data not found")
+            return "Data not found"
 
     def __setitem__(self, key, value): #Ustawianie wartości - SET to POLECENIE, USTAW POD TYM KLUCZEM KONKRETNĄ WARTOŚĆ
-        self.data[key] = value # Ustawianie: przypisz wartość (np. informacja o pogodzie) pod kluczem (np. datą)
+        city, date = key #Klucze to (miasto, data)
+        if city not in self.data: #SELF.DATA TO SŁOWNIK!
+            self.data[city] = {} #Jeśli nie było miasta, tworzy nowe w słowniku czyli plik *.json
+        if date in self.data[city]:
+            print(f"Uwaga: prognoza dla miasta {city} na dzień {date} została nadpisana.")
+        self.data[city][date] = value # Ustawianie: przypisz wartość (np. informacja o pogodzie) pod kluczem (np. datą)
         self.write_data_to_file() # Zapisz zaktualizowany słownik do pliku JSON
 
     def __iter__(self):

@@ -27,11 +27,11 @@ while True:
         # Jeśli parsowanie się nie powiodło, data jest niepoprawna
         print("Niepoprawny format daty. Spróbuj ponownie.")
 
-if weather_forecast[date] != "Data not found":
-    print("Wynik z pliku:", weather_forecast[date])
+if weather_forecast[date, city] != "Data not found":
+    print("Wynik z pliku:", weather_forecast[date, city])
 else:
     rain = check_rain_status(city, date)
-    weather_forecast[date] = rain
+    weather_forecast[city, date] = rain
     print("Wynik z API:", rain)
 
 
@@ -53,3 +53,8 @@ else:
     # Wyświetlamy wynik pobrany z API
     print(f"Dla miasta {city} w dniu {date}: {rain_sum}")
 
+result = weather_forecast[city, date]
+if result == "Data not found":
+    print("Nie znaleziono danych — pobieram z API...")
+else:
+    print(f"Wynik z pliku: {result}")

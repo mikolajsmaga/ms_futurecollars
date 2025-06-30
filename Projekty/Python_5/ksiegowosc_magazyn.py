@@ -20,7 +20,7 @@ while True:
 >>> """)
 
     match komenda:
-        case "1": #saldo
+        case "1":  # saldo
             try:
                 kwota = float(input("Wprowadź kwotę (może być ujemna): "))
                 konto += kwota
@@ -30,9 +30,11 @@ while True:
                 save_temporary_data(file_handler, magazyn, konto, operacje_finansowe)
 
             except ValueError:
-                print("Błąd! Wprowadzona wartość jest nie poprawna, spróbuj jeszcze raz.")
+                print(
+                    "Błąd! Wprowadzona wartość jest nie poprawna, spróbuj jeszcze raz."
+                )
 
-        case "2": #zakup
+        case "2":  # zakup
             try:
                 produkt = input("Podaj nazwę produktu: ").strip().lower()
                 producent = input("Podaj nazwę producenta: ").strip().lower()
@@ -42,7 +44,9 @@ while True:
                 cena = float(input("Cena za sztukę: "))
 
                 if cena <= 0 or ilosc <= 0 or rok < 1990:
-                    print("Błąd: Cena, ilość lub rok są nieprawidłowe. Zakup anulowany.")
+                    print(
+                        "Błąd: Cena, ilość lub rok są nieprawidłowe. Zakup anulowany."
+                    )
                     continue
 
                 koszt = cena * ilosc
@@ -63,14 +67,16 @@ while True:
                         "cena": cena,
                     }
 
-                operacje_finansowe.append(("zakup", produkt, producent, rok, rodzaj, cena, ilosc))
+                operacje_finansowe.append(
+                    ("zakup", produkt, producent, rok, rodzaj, cena, ilosc)
+                )
                 print(f"Zakupiono {ilosc} * {produkt} za {koszt:.2f} zł")
                 save_temporary_data(file_handler, magazyn, konto, operacje_finansowe)
 
             except ValueError:
-                    print("Błąd: podano dane w nieprawidłowym formacie.")
+                print("Błąd: podano dane w nieprawidłowym formacie.")
 
-        case "3": #sprzedaż
+        case "3":  # sprzedaż
             try:
                 produkt = input("Podaj nazwę produktu do sprzedaży: ").strip().lower()
 
@@ -94,27 +100,33 @@ while True:
                 magazyn[produkt]["ilosc"] -= ilosc
 
                 if magazyn[produkt]["ilosc"] == 0:
-                    print(f"Produkt {produkt} jest teraz wyprzedany – brak sztuk na stanie.")
+                    print(
+                        f"Produkt {produkt} jest teraz wyprzedany – brak sztuk na stanie."
+                    )
 
                 operacje_finansowe.append(("sprzedaż", produkt, ilosc, cena))
-                print(f"Sprzedano {ilosc} x {produkt} po {cena:.2f} zł = {przychod:.2f} zł")
+                print(
+                    f"Sprzedano {ilosc} x {produkt} po {cena:.2f} zł = {przychod:.2f} zł"
+                )
                 save_temporary_data(file_handler, magazyn, konto, operacje_finansowe)
 
             except ValueError:
                 print("Błąd: podano nieprawidłową wartość.")
 
-        case "4": #konto
+        case "4":  # konto
             print(f"Aktualny budżet to: {konto:.2f} zł.")
 
-        case "5": #lista
+        case "5":  # lista
             if not magazyn:
                 print("Magazyn jest pusty!")
             else:
                 print("Stan magazynu:")
                 for produkt, dane in magazyn.items():
-                    print(f"{produkt.capitalize()} ({dane['producent'].capitalize()}) - {dane['ilosc']} szt. | cena: {dane['cena']:.2f} zł")
+                    print(
+                        f"{produkt.capitalize()} ({dane['producent'].capitalize()}) - {dane['ilosc']} szt. | cena: {dane['cena']:.2f} zł"
+                    )
 
-        case "6": #magazyn
+        case "6":  # magazyn
             produkt = input("Podaj nazwę produktu do wyświetlenia: ").strip().lower()
             if produkt in magazyn:
                 dane = magazyn[produkt]
@@ -127,7 +139,7 @@ while True:
             else:
                 print(f"Produkt '{produkt}' nie jest dostępny na magazynie.")
 
-        case "7": #przegląd
+        case "7":  # przegląd
             od = input("Podaj wartość 'od' (numer transakcji): ")
             do = input("Podaj wartość 'do' (numer transakcji): ")
             if od:
@@ -140,7 +152,7 @@ while True:
                 do = len(operacje_finansowe)
             print(operacje_finansowe[od:do])
 
-        case "8": #koniec
+        case "8":  # koniec
             print("Zakańczam działanie programu")
             break
 
@@ -150,13 +162,3 @@ file_handler.historia = operacje_finansowe
 file_handler.save_magazyn_file()
 file_handler.save_saldo_file()
 file_handler.save_historia_file()
-
-
-
-
-
-
-
-
-
-

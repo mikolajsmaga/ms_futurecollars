@@ -13,11 +13,12 @@ def monitor(func):
         start_datetime = datetime.now()
         try:
             result = func(*args, **kwargs)
-            status = "Success"
+            if result is False:
+                status = "Error: Returned False"
+            else:
+                status = "Success"
             return result
-        except Exception as e:
-            status = f"Error: {e}"
-            raise
+
         finally:
             end_time = time.time()
             duration = end_time - start_time

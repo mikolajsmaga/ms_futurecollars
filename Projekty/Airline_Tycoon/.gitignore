@@ -1,0 +1,20 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+
+# VSCode / PyCharm / IDE
+.vscode/
+.idea/
+
+# systemowe pliki
+.DS_Store
+Thumbs.db
+
+# pliki środowiskowe
+.env
+.venv/
+venv/

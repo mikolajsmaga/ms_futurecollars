@@ -45,4 +45,4 @@ def get_token_from_json(user_id):
         token_data = json.load(file)
 
     # Zwrócenie danych dla danego użytkownika (lub None)
-    return token_data.get(user_id)
+    return token_data.get(user_id) or None

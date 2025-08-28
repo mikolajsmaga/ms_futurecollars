@@ -1,3 +1,4 @@
+"""KLIENT PLAID"""
 import os
 from plaid.configuration import Configuration
 from plaid.api_client import ApiClient

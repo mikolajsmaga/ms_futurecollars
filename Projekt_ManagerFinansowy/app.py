@@ -1,6 +1,7 @@
 """APLIKACJA FLASK"""
 import os  # do obsługi zmiennych środowiskowych
 from flask import Flask, request, jsonify  # Flask: framework do tworzenia API
+import sqlite3
 
 # Import klienta Plaid
 from services.plaid_client import get_plaid_client
@@ -11,7 +12,7 @@ from plaid.model.accounts_get_request import AccountsGetRequest
 from plaid.model.transactions_get_request import TransactionsGetRequest
 
 # Import funkcji do zapisu i odczytu tokenów
-from db import initialize_database, save_token_to_sqlite, get_token_from_sqlite
+from database import initialize_database, save_user_token, get_user_token
 from storage import save_token_to_json, get_token_from_json
 
 # Utworzenie aplikacji Flask
@@ -27,7 +28,7 @@ initialize_database()
 @app.post("/api/item/public_token/exchange")
 def exchange_public_token():
     # Pobranie identyfikatora użytkownika z parametru URL
-    user_id = request.args.get("user_id", "user_1")
+    user_id = request.args.get("user_id")
 
     # Pobranie public_token z ciała żądania
     public_token = request.json["public_token"]
@@ -41,7 +42,7 @@ def exchange_public_token():
     item_id = exchange_response["item_id"]
 
     # Zapis tokenów do bazy SQLite i pliku JSON
-    save_token_to_sqlite(user_id, access_token, item_id)
+    save_user_token(user_id, access_token, item_id)
     save_token_to_json(user_id, access_token, item_id)
 
     # Zwrócenie odpowiedzi
@@ -50,8 +51,8 @@ def exchange_public_token():
 # 2 Endpoint: pobierz konta użytkownika
 @app.get("/api/accounts")
 def get_accounts():
-    user_id = request.args.get("user_id", "user_1")
-    token_data = get_token_from_sqlite(user_id)
+    user_id = request.args.get("user_id")
+    token_data = get_user_token(user_id)
 
     if not token_data:
         return jsonify({"error": "Brak zapisanych danych dla użytkownika"}), 404
@@ -74,7 +75,7 @@ def get_transactions():
         access_token=token_data["access_token"],
         start_date="2024-01-01",
         end_date="2025-12-31",
-        options={"count": 50, "offset": 0}
+        options={"count": 10, "offset": 0}
     )
     transactions_response = plaid_client.transactions_get(transactions_request).to_dict()
 

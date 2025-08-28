@@ -66,7 +66,7 @@ def get_accounts():
 @app.get("/api/transactions")
 def get_transactions():
     user_id = request.args.get("user_id", "user_1")
-    token_data = get_token_from_sqlite(user_id)
+    token_data = get_user_token(user_id)
 
     if not token_data:
         return jsonify({"error": "Brak zapisanych danych dla użytkownika"}), 404
@@ -86,7 +86,7 @@ def get_transactions():
 def get_stored_token():
     user_id = request.args.get("user_id", "user_1")
 
-    sqlite_token = get_token_from_sqlite(user_id)
+    sqlite_token = get_user_token(user_id)
     json_token = get_token_from_json(user_id)
 
     return jsonify({

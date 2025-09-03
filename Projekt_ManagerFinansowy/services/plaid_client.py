@@ -2,17 +2,11 @@
 import os
 from plaid.configuration import Configuration
 from plaid.api_client import ApiClient
-from plaid.api.accounts import Accounts
-from plaid.api.transactions import Transactions
-from plaid.api.item import Item
+from plaid.api.plaid_api import PlaidApi
 
 def get_plaid_client():
     """
-    Tworzy i zwraca słownik z klientami API:
-    - Accounts
-    - Transactions
-    - Item
-    Wszystko na podstawie konfiguracji środowiska.
+    Tworzy i zwraca klienta PlaidApi z wszystkimi dostępnymi metodami API.
     """
 
     # Pobranie środowiska z .env (domyślnie 'sandbox')
@@ -20,26 +14,23 @@ def get_plaid_client():
 
     # Mapowanie środowiska na hosta
     plaid_host_urls = {
-        "sandbox": "https://sandbox.plaid.com",
-        "development": "https://development.plaid.com",
-        "production": "https://production.plaid.com"
+    "sandbox": "https://sandbox.plaid.com",
+    "development": "https://development.plaid.com",
+    "production": "https://production.plaid.com"
     }
 
     # Konfiguracja klienta
     configuration = Configuration(
-        host=plaid_host_urls[plaid_environment],
-        api_key={
-            "clientId": os.environ["PLAID_CLIENT_ID"],
-            "secret": os.environ["PLAID_SECRET"]
-        }
+    host=plaid_host_urls[plaid_environment],
+    api_key={
+    "clientId": os.environ.get("PLAID_CLIENT_ID", "your_client_id_here"),
+    "secret": os.environ.get("PLAID_SECRET", "your_secret_here")
+    }
     )
 
     # Utworzenie klienta API
     api_client = ApiClient(configuration)
 
-    # Zwrócenie osobnych klientów do każdej części API
-    return {
-        "accounts": Accounts(api_client),
-        "transactions": Transactions(api_client),
-        "item": Item(api_client)
-    }
+    # Zwrócenie klienta PlaidApi z wszystkimi metodami
+    return PlaidApi(api_client)
+print("Działa")

@@ -32,7 +32,7 @@ def get_plaid_client():
         host=plaid_host_urls[plaid_environment],
         api_key={
             "clientId": os.getenv("PLAID_CLIENT_ID"),
-            "secret": os.getenv("PLAID_SECRET")
+            "secret": os.getenv("PLAID_SECRET"),
             }
     )
 

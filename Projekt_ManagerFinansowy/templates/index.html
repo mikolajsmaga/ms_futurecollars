@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Manager Frontend</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container my-5">
+  <h1 class="mb-4 text-center">Finance Manager</h1>
+
+  <!-- Formularz Public Token -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Exchange Public Token</h5>
+      <div class="mb-3">
+        <label for="publicTokenInput" class="form-label">Public Token</label>
+        <input type="text" class="form-control" id="publicTokenInput" placeholder="Wklej public_token">
+      </div>
+      <button class="btn btn-primary" id="exchangeBtn">Exchange</button>
+      <div id="exchangeResult" class="mt-2 text-success"></div>
+    </div>
+  </div>
+
+  <!-- Wyświetlanie tokenów -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Stored Tokens</h5>
+      <button class="btn btn-secondary mb-2" id="refreshTokensBtn">Refresh</button>
+      <pre id="tokensDisplay" class="bg-light p-2 border rounded"></pre>
+    </div>
+  </div>
+
+  <!-- Wyświetlanie kont -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Accounts</h5>
+      <button class="btn btn-secondary mb-2" id="loadAccountsBtn">Load Accounts</button>
+      <pre id="accountsDisplay" class="bg-light p-2 border rounded"></pre>
+    </div>
+  </div>
+
+  <!-- Wyświetlanie transakcji -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Transactions</h5>
+      <button class="btn btn-secondary mb-2" id="loadTransactionsBtn">Load Transactions</button>
+      <pre id="transactionsDisplay" class="bg-light p-2 border rounded"></pre>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

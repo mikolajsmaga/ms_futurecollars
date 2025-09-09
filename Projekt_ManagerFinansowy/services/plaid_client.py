@@ -3,6 +3,14 @@ import os
 from plaid.configuration import Configuration
 from plaid.api_client import ApiClient
 from plaid.api.plaid_api import PlaidApi
+from dotenv import load_dotenv
+
+# Załaduj zmienne środowiskowe z pliku .env
+load_dotenv()
+
+# ✅ Sprawdzenie czy są klucze API
+if not os.getenv("PLAID_CLIENT_ID") or not os.getenv("PLAID_SECRET"):
+    raise ValueError("Brakuje kluczy API w pliku .env")
 
 def get_plaid_client():
     """
@@ -21,11 +29,11 @@ def get_plaid_client():
 
     # Konfiguracja klienta
     configuration = Configuration(
-    host=plaid_host_urls[plaid_environment],
-    api_key={
-    "clientId": os.environ.get("PLAID_CLIENT_ID", "your_client_id_here"),
-    "secret": os.environ.get("PLAID_SECRET", "your_secret_here")
-    }
+        host=plaid_host_urls[plaid_environment],
+        api_key={
+            "clientId": os.getenv("PLAID_CLIENT_ID"),
+            "secret": os.getenv("PLAID_SECRET")
+            }
     )
 
     # Utworzenie klienta API
@@ -34,3 +42,9 @@ def get_plaid_client():
     # Zwrócenie klienta PlaidApi z wszystkimi metodami
     return PlaidApi(api_client)
 print("Działa")
+
+plaid_client = get_plaid_client()
+print(plaid_client)
+
+print("CLIENT_ID:", os.getenv("PLAID_CLIENT_ID"))
+print("SECRET:", os.getenv("PLAID_SECRET"))

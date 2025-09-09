@@ -1,9 +1,14 @@
 """TEST PLAID SDK"""
-from plaid.configuration import Configuration
-from plaid.api_client import ApiClient
-from plaid.api.plaid_api import PlaidApi
+from services.plaid_client import get_plaid_client
+import os
 
-config = Configuration(host="https://sandbox.plaid.com", api_key={"clientId":"...", "secret":"..."})
-client = ApiClient(config)
-plaid = PlaidApi(client)
-print("Plaid SDK działa ✅")
+# Sprawdzenie, czy klient w ogóle ładuje zmienne
+print("CLIENT_ID:", os.getenv("PLAID_CLIENT_ID"))
+print("SECRET:", os.getenv("PLAID_SECRET"))
+
+# Spróbuj utworzyć klienta Plaid
+try:
+    client = get_plaid_client()
+    print("✅ Klient Plaid utworzony poprawnie")
+except Exception as e:
+    print("❌ Błąd przy tworzeniu klienta Plaid:", e)

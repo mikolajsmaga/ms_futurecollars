@@ -1,6 +1,6 @@
 """SQLITE - BAZA DANYCH"""
-import sqlite3  # biblioteka do obsługi bazy SQLite
-from datetime import datetime  # do zapisu daty i czasu
+import sqlite3
+from datetime import datetime
 
 # Nazwa pliku bazy danych
 DATABASE_NAME = "tokens.db"
@@ -22,8 +22,9 @@ def initialize_database():
         )
     """)
 
-    connection.commit()  # zatwierdzenie zmian
-    connection.close()   # zamknięcie połączenia z bazą
+    connection.commit()
+    connection.close()
+    print("DEBUG: Baza SQLite zainicjalizowana")
 
 def save_user_token(user_id, access_token, item_id):
     """
@@ -33,19 +34,21 @@ def save_user_token(user_id, access_token, item_id):
     connection = sqlite3.connect(DATABASE_NAME)
     cursor = connection.cursor()
 
+    saved_at = datetime.utcnow().isoformat() + "Z"
+
     # Wstawienie lub nadpisanie danych użytkownika
     cursor.execute("""
-        INSERT OR REPLACE INTO tokens (user_id, access_token, item_id, saved_at)
+        INSERT INTO tokens (user_id, access_token, item_id, saved_at)
         VALUES (?, ?, ?, ?)
-    """, (
-        user_id,
-        access_token,
-        item_id,
-        datetime.utcnow().isoformat() + "Z"  # zapis daty w formacie ISO (UTC)
-    ))
+        ON CONFLICT(user_id) DO UPDATE SET
+            access_token=excluded.access_token,
+            item_id=excluded.item_id,
+            saved_at=excluded.saved_at
+    """, (user_id, access_token, item_id, saved_at))
 
     connection.commit()
     connection.close()
+    print(f"DEBUG: Zapisano token do SQLite dla {user_id}")
 
 def get_user_token(user_id):
     """
@@ -65,10 +68,13 @@ def get_user_token(user_id):
     connection.close()
 
     if result:
-        return {
+        token_data = {
             "access_token": result[0],
             "item_id": result[1],
             "saved_at": result[2]
         }
+        print(f"DEBUG: Odczytano token z SQLite dla {user_id}: {token_data}")
+        return token_data
 
+    print(f"DEBUG: Brak tokenu w SQLite dla {user_id}")
     return None

@@ -1,12 +1,14 @@
 """JSON - STORAGE"""
 import json  # biblioteka do obsługi formatu JSON
 from datetime import datetime  # do zapisu aktualnej daty i czasu
+from json import JSONDecodeError
 from pathlib import Path  # do pracy ze ścieżkami plików
 
 # Ścieżka do pliku, w którym będą zapisane tokeny
 TOKENS_FILE_PATH = Path("tokens.json")
 
 def save_token_to_json(user_id, access_token, item_id):
+    print(f"DEBUG: Zapisuję token do JSON dla {user_id}")
     """
     Zapisuje token użytkownika do pliku JSON.
     Jeśli plik już istnieje – aktualizuje dane użytkownika.
@@ -15,7 +17,10 @@ def save_token_to_json(user_id, access_token, item_id):
     if TOKENS_FILE_PATH.exists():
         # Wczytanie istniejących danych z pliku
         with TOKENS_FILE_PATH.open("r", encoding="utf-8") as file:
-            token_data = json.load(file)
+            try:
+                token_data = json.load(file)
+            except json.JSONDecodeError:
+                token_data = {}
     else:
         # Jeśli plik nie istnieje – tworzymy pusty słownik
         token_data = {}
@@ -42,7 +47,10 @@ def get_token_from_json(user_id):
 
     # Wczytanie danych z pliku
     with TOKENS_FILE_PATH.open("r", encoding="utf-8") as file:
-        token_data = json.load(file)
+        try:
+            token_data = json.load(file)
+        except JSONDecodeError:
+            return None
 
     # Zwrócenie danych dla danego użytkownika (lub None)
     return token_data.get(user_id) or None

@@ -29,21 +29,27 @@ plaid_client = get_plaid_client()
 # Inicjalizacja bazy danych SQLite
 initialize_database()
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 # 1 Endpoint: wymiana public_token na access_token
 @app.post("/api/item/public_token/exchange")
 def exchange_public_token():
     print("DEBUG: Endpoint /exchange został wywołany")
     user_id = request.args.get("user_id", "user_1")
 
-    # 1) bezpieczne pobranie JSON
-    data = request.get_json(silent=True) or {}
-    public_token = data.get("public_token")
-    if not public_token:
+    # Obsługa danych z formularza (HTML)
+    if request.form and "public_token" in request.form:
+        public_token = request.form["public_token"]
+    # Obsługa danych z JSON (Postman, JS)
+    elif request.is_json:
+        public_token = request.json.get("public_token")
+    else:
         return jsonify({
-            "error": "Missing 'public_token' in JSON body",
-            "hint": "Wyślij POST z Content-Type: application/json i body: {\"public_token\": \"public-sandbox-...\"}"
+            "error": "Missing 'public_token'",
+            "hint": "Wyślij POST jako JSON {\"public_token\": \"...\"} albo przez formularz HTML."
         }), 400
-
     try:
         # 2) wymiana tokenu
         req = ItemPublicTokenExchangeRequest(public_token=public_token)
@@ -178,7 +184,3 @@ def create_link_token():
     except Exception as e:
         # Obsługa błędów żeby zamiast 500 pokazać info
         return jsonify({"error": str(e)}), 400
-
-@app.get("/")
-def index():
-    return render_template("index.html")

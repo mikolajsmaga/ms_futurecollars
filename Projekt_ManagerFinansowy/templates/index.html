@@ -65,24 +65,32 @@
 </head>
 <body>
   <div class="container">
-    <h1>💰 Finance Manager</h1>
-    <p>Zarządzaj swoimi tokenami i sprawdzaj dane z Plaid.</p>
+    <header>
+      <h1>💰 Finance Manager</h1>
+      <p>Zarządzaj swoimi tokenami i sprawdzaj dane z Plaid.</p>
+    </header>
 
-    <!-- Formularz do wymiany public_token -->
-    <h2>🔑 Exchange Public Token</h2>
-    <form method="POST" action="/api/item/public_token/exchange?user_id=user_1">
-      <label for="public_token">Public Token:</label>
-      <input type="text" id="public_token" name="public_token" required>
-      <button type="submit">Wymień token</button>
-    </form>
+    <main>
+      <!-- Formularz do wymiany public_token -->
+      <section class="form-section">
+        <h2>🔑 Exchange Public Token</h2>
+        <form method="POST" action="/api/item/public_token/exchange?user_id=user_1">
+          <label for="public_token">Public Token:</label>
+          <input type="text" id="public_token" name="public_token" required>
+          <button type="submit">Wymień token</button>
+        </form>
+      </section>
 
-    <!-- Linki GET do API -->
-    <h2>📊 Sprawdź dane</h2>
-    <div class="links">
-      <a href="/api/accounts?user_id=user_1" target="_blank">Pobierz konta</a>
-      <a href="/api/transactions?user_id=user_1" target="_blank">Pobierz transakcje</a>
-      <a href="/api/token?user_id=user_1" target="_blank">Podgląd zapisanych tokenów</a>
-    </div>
+      <!-- Linki GET do API -->
+      <section class="links-section">
+        <h2>📊 Sprawdź dane</h2>
+        <div class="links">
+          <a href="/api/accounts?user_id=user_1" target="_blank">Pobierz konta</a>
+          <a href="/api/transactions?user_id=user_1" target="_blank">Pobierz transakcje</a>
+          <a href="/api/token?user_id=user_1" target="_blank">Podgląd zapisanych tokenów</a>
+        </div>
+      </section>
+    </main>
   </div>
 </body>
 </html>

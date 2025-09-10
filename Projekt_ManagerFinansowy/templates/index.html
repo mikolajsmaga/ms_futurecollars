@@ -1,57 +1,88 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Finance Manager Frontend</title>-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+<!--<body class="bg-light">-->
+
+<!--<div class="container my-5">-->
+<!--  <h1 class="mb-4 text-center">Finance Manager</h1>-->
+
+<!--  &lt;!&ndash; Formularz Public Token &ndash;&gt;-->
+<!--  <div class="card mb-4">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Exchange Public Token</h5>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="publicTokenInput" class="form-label">Public Token</label>-->
+<!--        <input type="text" class="form-control" id="publicTokenInput" placeholder="Wklej public_token">-->
+<!--      </div>-->
+<!--      <button class="btn btn-primary" id="exchangeBtn">Exchange</button>-->
+<!--      <div id="exchangeResult" class="mt-2 text-success"></div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Wyświetlanie tokenów &ndash;&gt;-->
+<!--  <div class="card mb-4">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Stored Tokens</h5>-->
+<!--      <button class="btn btn-secondary mb-2" id="refreshTokensBtn">Refresh</button>-->
+<!--      <pre id="tokensDisplay" class="bg-light p-2 border rounded"></pre>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Wyświetlanie kont &ndash;&gt;-->
+<!--  <div class="card mb-4">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Accounts</h5>-->
+<!--      <button class="btn btn-secondary mb-2" id="loadAccountsBtn">Load Accounts</button>-->
+<!--      <pre id="accountsDisplay" class="bg-light p-2 border rounded"></pre>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Wyświetlanie transakcji &ndash;&gt;-->
+<!--  <div class="card mb-4">-->
+<!--    <div class="card-body">-->
+<!--      <h5 class="card-title">Transactions</h5>-->
+<!--      <button class="btn btn-secondary mb-2" id="loadTransactionsBtn">Load Transactions</button>-->
+<!--      <pre id="transactionsDisplay" class="bg-light p-2 border rounded"></pre>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<script src="{{ url_for('static', filename='app.js') }}"></script>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finance Manager Frontend</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Finance Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-light">
+<body>
+  <div class="container">
+    <h1>💰 Finance Manager</h1>
+    <p>Zarządzaj swoimi tokenami i sprawdzaj dane z Plaid.</p>
 
-<div class="container my-5">
-  <h1 class="mb-4 text-center">Finance Manager</h1>
+    <!-- Formularz do wymiany public_token -->
+    <h2>🔑 Exchange Public Token</h2>
+    <form method="POST" action="/api/item/public_token/exchange?user_id=user_1">
+      <label for="public_token">Public Token:</label>
+      <input type="text" id="public_token" name="public_token" required>
+      <button type="submit">Wymień token</button>
+    </form>
 
-  <!-- Formularz Public Token -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Exchange Public Token</h5>
-      <div class="mb-3">
-        <label for="publicTokenInput" class="form-label">Public Token</label>
-        <input type="text" class="form-control" id="publicTokenInput" placeholder="Wklej public_token">
-      </div>
-      <button class="btn btn-primary" id="exchangeBtn">Exchange</button>
-      <div id="exchangeResult" class="mt-2 text-success"></div>
+    <!-- Linki GET do API -->
+    <h2>📊 Sprawdź dane</h2>
+    <div class="links">
+      <a href="/api/accounts?user_id=user_1" target="_blank">Pobierz konta</a>
+      <a href="/api/transactions?user_id=user_1" target="_blank">Pobierz transakcje</a>
+      <a href="/api/token?user_id=user_1" target="_blank">Podgląd zapisanych tokenów</a>
     </div>
   </div>
-
-  <!-- Wyświetlanie tokenów -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Stored Tokens</h5>
-      <button class="btn btn-secondary mb-2" id="refreshTokensBtn">Refresh</button>
-      <pre id="tokensDisplay" class="bg-light p-2 border rounded"></pre>
-    </div>
-  </div>
-
-  <!-- Wyświetlanie kont -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Accounts</h5>
-      <button class="btn btn-secondary mb-2" id="loadAccountsBtn">Load Accounts</button>
-      <pre id="accountsDisplay" class="bg-light p-2 border rounded"></pre>
-    </div>
-  </div>
-
-  <!-- Wyświetlanie transakcji -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <h5 class="card-title">Transactions</h5>
-      <button class="btn btn-secondary mb-2" id="loadTransactionsBtn">Load Transactions</button>
-      <pre id="transactionsDisplay" class="bg-light p-2 border rounded"></pre>
-    </div>
-  </div>
-</div>
-
-<script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>

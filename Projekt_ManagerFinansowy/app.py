@@ -29,7 +29,7 @@ plaid_client = get_plaid_client()
 # Inicjalizacja bazy danych SQLite
 initialize_database()
 
-@app.route("/")
+@app.get("/")
 def index():
     return render_template("index.html")
 
@@ -184,3 +184,17 @@ def create_link_token():
     except Exception as e:
         # Obsługa błędów żeby zamiast 500 pokazać info
         return jsonify({"error": str(e)}), 400
+
+@app.get("/accounts")
+def view_accounts():
+    user_id = request.args.get("user_id", "user_1")
+    token_data = get_user_token(user_id)
+
+    if not token_data:
+        return "<p>Brak zapisanych danych dla użytkownika</p>", 404
+
+    accounts_request = AccountsGetRequest(access_token=token_data["access_token"])
+    accounts_response = plaid_client.accounts_get(accounts_request).to_dict()
+
+    # Przekazanie danych do szablonu
+    return render_template("accounts.html", accounts=accounts_response["accounts"])

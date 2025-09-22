@@ -88,3 +88,191 @@ th {
 tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+pre {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+/* ======================= */
+/* ===== Login Label ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f9f5f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 350px;
+}
+
+.form-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.inputbox {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b00;
+    font-size: 1.2rem;
+}
+
+.inputbox input {
+    width: 85%;
+    padding: 0.8rem 0.8rem 0.8rem 2.5rem; /* padding-left przesuwa tekst w prawo, nie nachodzi na ikonę */
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    color: #333;
+}
+
+.inputbox label {
+    position: absolute;
+    top: -0.6rem;
+    left: 2.5rem; /* dopasowane do paddingu input */
+    font-size: 0.9rem;
+    color: #666;
+    background: #f9f5f0;
+    padding: 0 0.2rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #ff6b00;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffaa00;
+}
+
+.forget label a {
+    color: #ff6b00;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #ff6b00;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffaa00;
+}
+
+.forget label a {
+    color: #ff6b00;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+/*=============================================*/
+/* Loader - okrąg z robakiem na pełnym ekranie */
+.loader-body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f5f0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*======SVG okręgu======*/
+.pl {
+    width: 200px;  /* dopasowana szerokość */
+    height: 200px; /* dopasowana wysokość */
+    animation-name: bump;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+}
+.pl__ring {
+    stroke: hsla(30,10%,10%,0.1);
+    fill: none;
+    stroke-width: 16;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s;
+}
+.pl__worm {
+    stroke: #ff6b00;
+    stroke-width: 16;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    animation-name: worm;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.42,0.17,0.75,0.83);
+}
+
+@keyframes worm {
+    from { stroke-dashoffset: 10; }
+    25% { stroke-dashoffset: 565; }
+    to { stroke-dashoffset: 1165; }
+}
+
+.loading-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ładowanie Dashboardu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="loader-body">
+  <div class="loader-container">
+    <svg class="pl" viewBox="0 0 200 200">
+      <circle class="pl__ring" cx="100" cy="100" r="90"/>
+      <circle class="pl__worm" cx="100" cy="100" r="90" stroke-dasharray="565"/>
+    </svg>
+    <div class="loading-text">Ładowanie dashboardu...</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2500);
+  </script>
+</body>
+</html>

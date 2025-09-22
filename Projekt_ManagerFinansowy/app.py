@@ -1,13 +1,12 @@
-"""APLIKACJA FLASK"""
-import os  # do obsługi zmiennych środowiskowych
-from flask import Flask, request, jsonify, render_template  # Flask: framework do tworzenia API
-import sqlite3
+"""APLIKACJA FLASK – FinTech Manager z loaderem i glassmorphism login"""
+import os
+from flask import Flask, request, jsonify, render_template, redirect, url_for, session
+import sqlite3, hashlib
 from datetime import datetime, timedelta
+from functools import wraps
 
 # Import klienta Plaid
 from services.plaid_client import get_plaid_client
-
-# Import modeli zapytań z Plaid SDK
 from plaid.model.item_public_token_exchange_request import ItemPublicTokenExchangeRequest
 from plaid.model.accounts_get_request import AccountsGetRequest
 from plaid.model.transactions_get_request import TransactionsGetRequest
@@ -20,20 +19,57 @@ from plaid.model.country_code import CountryCode
 from database import initialize_database, save_user_token, get_user_token
 from storage import save_token_to_json, get_token_from_json
 
-# Utworzenie aplikacji Flask
+# Fake baza użytkowników z haszowaniem SHA256
+USERS = {"user": hashlib.sha256("1234".encode()).hexdigest()}
+
 app = Flask(__name__)
+app.secret_key = "super_secret_key"  # production: używać zmiennych środowiskowych
 
-# Utworzenie klienta Plaid
-plaid_client = get_plaid_client()
+plaid_client = get_plaid_client()  # inicjalizacja klienta Plaid
+initialize_database()  # inicjalizacja SQLite
 
-# Inicjalizacja bazy danych SQLite
-initialize_database()
+# ===== Dekorator login_required do zabezpieczenia widoków =====
+def login_required(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if "user" not in session:  # sprawdzanie czy użytkownik jest zalogowany
+            return redirect(url_for("login"))
+        return func(*args, **kwargs)
+    return wrapper
 
-@app.get("/")
-def index():
-    return render_template("index.html")
+# ===== Login z glassmorphism =====
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    error = None
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = hashlib.sha256(request.form.get("password").encode()).hexdigest()
+        if username in USERS and USERS[username] == password:
+            session["user"] = username  # zapis do sesji
+            return redirect(url_for("loading"))  # po zalogowaniu loader
+        else:
+            error = "Nieprawidłowy login lub hasło."
+    return render_template("login.html", error=error)
 
-# 1 Endpoint: wymiana public_token na access_token
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect(url_for("login"))
+
+# ===== Loader =====
+@app.route("/loading")
+def loading():
+    if "user" not in session:
+        return redirect(url_for("login"))
+    return render_template("loading.html")
+
+# ===== Dashboard =====
+@app.route("/")
+@login_required
+def dashboard():
+    return render_template("index.html", user=session["user"])
+
+# ===== Endpoints Plaid =====
 @app.post("/api/item/public_token/exchange")
 def exchange_public_token():
     print("DEBUG: Endpoint /exchange został wywołany")
@@ -198,3 +234,35 @@ def view_accounts():
 
     # Przekazanie danych do szablonu
     return render_template("accounts.html", accounts=accounts_response["accounts"])
+
+# Widok transakcji
+@app.get("/transactions_view")
+def view_transactions():
+    user_id = request.args.get("user_id", "user_1")
+    token_data = get_user_token(user_id)
+
+    if not token_data:
+        return "<p>Brak zapisanych danych dla użytkownika</p>", 404
+
+    transactions_request = TransactionsGetRequest(
+        access_token=token_data["access_token"],
+        start_date=date.today().replace(year=date.today().year - 1),
+        end_date=date.today(),
+        options={"count": 20, "offset": 0}
+    )
+    transactions_response = plaid_client.transactions_get(transactions_request).to_dict()
+
+    return render_template("transactions.html", transactions=transactions_response["transactions"])
+
+
+# Widok tokenów
+@app.get("/tokens_view")
+def view_tokens():
+    user_id = request.args.get("user_id", "user_1")
+    sqlite_token = get_user_token(user_id)
+    json_token = get_token_from_json(user_id)
+
+    return render_template("tokens.html", sqlite_token=sqlite_token, json_token=json_token)
+
+if __name__ == "__main__":
+    app.run(debug=True)

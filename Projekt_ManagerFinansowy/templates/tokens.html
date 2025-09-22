@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tokens</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Stored Tokens</h1>
+
+    <h2>SQLite</h2>
+    {% if sqlite_token %}
+      <pre>{{ sqlite_token | tojson(indent=2) }}</pre>
+    {% else %}
+      <p>No token saved in SQLite</p>
+    {% endif %}
+
+    <h2>JSON</h2>
+    {% if json_token %}
+      <pre>{{ json_token | tojson(indent=2) }}</pre>
+    {% else %}
+      <p>No token saved in JSON</p>
+    {% endif %}
+
+    <a href="/">🔙 Back</a>
+  </div>
+</body>
+</html>

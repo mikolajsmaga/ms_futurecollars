@@ -48,7 +48,7 @@ def login():
             session["user"] = username  # zapis do sesji
             return redirect(url_for("loading"))  # po zalogowaniu loader
         else:
-            error = "Nieprawidłowy login lub hasło."
+            error = "Login or password is invalid!"
     return render_template("login.html", error=error)
 
 @app.route("/logout")

@@ -1,100 +1,100 @@
-Finance Manager – Plaid Integration
-Opis projektu
+💰 Finance Manager – Plaid Integration
+📌 About the project
 
-Finance Manager to aplikacja webowa zbudowana w Pythonie i Flask, która pozwala użytkownikom na integrację danych bankowych przez Plaid API.
-Funkcjonalności obejmują:
+Finance Manager is a lightweight web app built with Python (Flask) that integrates with the Plaid API (Sandbox).
+It allows you to connect bank accounts, fetch balances and transactions, and safely store access tokens locally.
 
-Połączenie z kontami bankowymi w trybie Sandbox Plaid
+This project was created as part of an API integration exercise and is a great foundation for future fintech applications.
 
-Wymiana public_token na access_token
+🚀 Features
 
-Pobieranie kont użytkownika
+🔑 Exchange public_token → access_token
 
-Pobieranie transakcji z ostatnich 30 dni
+🏦 Fetch user’s bank accounts (Plaid Sandbox)
 
-Zapis tokenów w lokalnej bazie SQLite oraz pliku tokens.json
+📊 Get transactions (last 30 days)
 
-Projekt powstał w ramach ćwiczenia z integracji API i zarządzania danymi finansowymi.
+💾 Save tokens in SQLite and JSON for persistence
 
-Technologie
+🌐 Simple frontend (HTML + CSS) to test everything without Postman
+
+🛠️ Tech Stack
 
 Backend: Python 3.13, Flask
 
-Baza danych: SQLite
+Database: SQLite
 
-Pliki JSON: lokalne przechowywanie tokenów
+Storage: JSON
 
 API: Plaid (Sandbox)
 
-Frontend: prosty HTML/JS (Bootstrap planowany w kolejnej fazie)
+Frontend: HTML + CSS (JS/Bootstrap planned in future phase)
 
-Instalacja i uruchomienie
-
-Sklonuj repozytorium:
-
+⚡ Quickstart
+1. Clone the repo
 git clone <repo_url>
 cd projekt_managerfinansowy
 
-
-Utwórz i aktywuj środowisko wirtualne:
-
+2. Create & activate virtual environment
 python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux / Mac
+# Windows
+venv\Scripts\activate
+# Linux / Mac
+source venv/bin/activate
 
-
-Zainstaluj wymagane paczki:
-
+3. Install dependencies
 pip install -r requirements.txt
 
+4. Configure Plaid keys
 
-Utwórz plik .env z kluczami Plaid Sandbox:
+Create a .env file:
 
 PLAID_CLIENT_ID=your_client_id
 PLAID_SECRET=your_secret
 PLAID_ENV=sandbox
 
-
-Uruchom aplikację Flask:
-
+5. Run the app
 flask --app app run
 
 
-Otwórz przeglądarkę i sprawdź endpointy lokalnie (np. http://127.0.0.1:5000/api/accounts)
+Open http://127.0.0.1:5000
+ in your browser 🎉 and login by user and 1234
 
-Dostępne endpointy
-Endpoint	Metoda	Opis
-/api/sandbox/public_token/exchange	GET	Generuje sandbox public_token, wymienia na access_token i zapisuje tokeny w SQLite i JSON
-/api/accounts	GET	Pobiera listę kont użytkownika
-/api/transactions	GET	Pobiera transakcje użytkownika z ostatnich 30 dni
-/api/token	GET	Podgląd zapisanych tokenów w SQLite i JSON
-Struktura projektu
+📡 API Endpoints
+Endpoint	Method	Description
+/api/item/public_token/exchange	POST	Exchange public_token for access_token, save to DB & JSON
+/api/accounts	GET	Fetch user accounts
+/api/transactions	GET	Fetch last 30 days of transactions
+/api/token	GET	View saved tokens (SQLite & JSON)
+📂 Project Structure
 projekt_managerfinansowy/
 │
-├─ app.py                  # Główny plik Flask
-├─ database.py             # Obsługa SQLite
-├─ storage.py              # Obsługa JSON
+├─ app.py                  # Flask app (routes & API logic)
+├─ database.py             # SQLite operations
+├─ storage.py              # JSON operations
 ├─ services/
-│   └─ plaid_client.py     # Konfiguracja klienta Plaid
-├─ tokens.json             # Lokalny zapis tokenów
-├─ tokens.db               # Baza danych SQLite
-├─ static/                 # CSS, JS (frontend)
-└─ templates/              # HTML (frontend)
+│   └─ plaid_client.py     # Plaid API client config
+├─ tokens.json             # Local token storage
+├─ tokens.db               # SQLite DB
+├─ static/                 # CSS / frontend assets
+└─ templates/              # HTML frontend
 
-Użycie
+🔍 Usage Flow
 
-Wygeneruj token Sandbox (GET /api/sandbox/public_token/exchange)
+Generate Sandbox public_token in Plaid
 
-Sprawdź zapis tokenów w tokens.json i SQLite
+Exchange it via /api/item/public_token/exchange
 
-Pobierz konta użytkownika (GET /api/accounts)
+Token gets stored in SQLite + JSON
 
-Pobierz transakcje użytkownika (GET /api/transactions)
+Test other endpoints (/api/accounts, /api/transactions)
 
-Notatki
+View saved tokens at /api/token
 
-Sandbox generuje transakcje tylko dla ostatnich 30 dni
+📝 Notes
 
-Daty w SQLite i JSON zapisane w UTC+2
+Plaid Sandbox only simulates transactions from the last 30 days
 
-Frontend będzie uzupełniony w kolejnej fazie
+Dates are saved in UTC+2
+
+Frontend is kept minimal for testing purposes – styling/JS to be added later

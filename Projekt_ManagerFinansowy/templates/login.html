@@ -6,21 +6,21 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
 </head>
-<body>
+<body class="login-body">
 <section>
   <div class="form-box">
     <div class="form-value">
       <form method="POST">
-        <h2>FinTech Manager</h2>
+        <h2>FinTech Manager Demo</h2>
         <div class="inputbox">
           <ion-icon name="mail-outline"></ion-icon>
           <input type="text" name="username" required>
-          <label class="input-label">Użytkownik</label>
+          <label class="input-label">User</label>
         </div>
         <div class="inputbox">
           <ion-icon name="lock-closed-outline"></ion-icon>
           <input type="password" name="password" required>
-          <label class="input-label">Hasło</label>
+          <label class="input-label">Password</label>
         </div>
         <div class="forget">
           <label><input type="checkbox"> Remember me</label>

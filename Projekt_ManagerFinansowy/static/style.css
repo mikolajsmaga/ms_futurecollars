@@ -1,109 +1,125 @@
+/* ======================== */
+/* ===== Main Menu Log===== */
+/* ===== Global ===== */
 body {
-  margin: 0;
-  height: 100vh;              /* pełna wysokość ekranu */
-  display: flex;              /* włączamy flexbox */
-  justify-content: center;    /* wyśrodkowanie poziome */
-  align-items: center;        /* wyśrodkowanie pionowe */
-  background-color: #f4f4f9;  /* lekki kolor tła */
-  font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f9f5f0;
+    color: #333;
 }
 
 .container {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;         /* wyrównanie tekstu */
-  max-width: 400px;
-  width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-h1 {
-  text-align: center;
-  color: #0077cc;
+/* ===== Header ===== */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-h2 {
-  margin-top: 30px;
-  color: #444;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+header p {
+    font-size: 1.2rem;
+    color: #666;
 }
 
-input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* ===== Sections ===== */
+section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button {
-  background: #0077cc;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-button:hover {
-  background: #005fa3;
+/* ===== Formularz ===== */
+.form-section form {
+    display: flex;
+    flex-direction: column;
 }
 
+.form-section label {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.form-section input {
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-section button {
+    padding: 0.7rem 1.2rem;
+    background: #ff6b00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.form-section button:hover {
+    background: #ff8533;
+    transform: translateY(-2px);
+}
+
+/* ===== Linki ===== */
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .links a {
-  display: block;
-  padding: 10px;
-  background: #eee;
-  border-radius: 6px;
-  text-decoration: none;
-  text-align: center;
-  color: #0077cc;
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    background: #ff6b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+.links a:hover {
+    background: #ff8533;
+    transform: translateY(-2px);
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 0.5rem;
-  text-align: left;
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 }
-
-th {
-  background-color: #f4f4f9;
-}
-
-tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-pre {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
-  font-size: 0.9rem;
-}
-
 /* ======================= */
 /* ===== Login Label ===== */
-body {
+body.login-body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
-    background: #f9f5f0;
+    background: url('/static/images/background.jpg') no-repeat center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,8 +231,8 @@ button:hover {
 }
 
 /*=============================================*/
-/* Loader - okrąg z robakiem na pełnym ekranie */
-.loader-body {
+/* Loader - pełny ekran z efektem "stunt" */
+body.loader-body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -224,10 +240,11 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f9f5f0;
+    background: #f9f5f0; /* delikatne tło */
     font-family: "Segoe UI", sans-serif;
 }
 
+/* Container */
 .loader-container {
     display: flex;
     flex-direction: column;
@@ -235,44 +252,63 @@ button:hover {
     justify-content: center;
 }
 
-/*======SVG okręgu======*/
+/*====== SVG okręgu ======*/
 .pl {
-    width: 200px;  /* dopasowana szerokość */
-    height: 200px; /* dopasowana wysokość */
-    animation-name: bump;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    width: 200px;
+    height: 200px;
+    animation: bump 4s infinite ease-in-out;
     position: relative;
 }
+
+/* Tło pierścienia */
 .pl__ring {
-    stroke: hsla(30,10%,10%,0.1);
+    stroke: rgba(0,0,0,0.08);
     fill: none;
     stroke-width: 16;
     stroke-linecap: round;
     stroke-linejoin: round;
-    transition: stroke 0.3s;
 }
+
 .pl__worm {
     stroke: #ff6b00;
     stroke-width: 16;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
-    animation-name: worm;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.42,0.17,0.75,0.83);
+    filter: drop-shadow(0 0 4px rgba(255,107,0,0.6));
+    stroke-dasharray: 80 565; /* stała długość robaka */
+    animation: worm 2s infinite linear; /* tylko przesuwanie */
 }
 
+/* Robak porusza się po okręgu */
 @keyframes worm {
-    from { stroke-dashoffset: 10; }
-    25% { stroke-dashoffset: 565; }
-    to { stroke-dashoffset: 1165; }
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 565; }
+}
+/* Delikatny „skok”/bounce robaka */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-6px) scale(1.05); }
 }
 
+/* Tekst */
 .loading-text {
     margin-top: 1rem;
     font-size: 1.2rem;
-    color: #333;
+    font-weight: 500;
+    color: #ff6b00;
+    text-shadow: 0 0 4px rgba(255,107,0,0.6);
+    animation: pulse 2s infinite;
+}
+
+/* Pulsowanie tekstu */
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+/* Subtelny bump dla całego loadera */
+@keyframes bump {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
 }
